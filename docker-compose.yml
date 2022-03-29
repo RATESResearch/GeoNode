@@ -87,6 +87,7 @@ services:
       - RESOLVER=127.0.0.11
 #    environment:
       - VIRTUAL_HOST=${HTTP_HOST}
+      - LETSENCRYPT_HOST=${HTTP_HOST}
     expose:
       - 80
 #    ports:
