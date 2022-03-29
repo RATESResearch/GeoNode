@@ -208,6 +208,9 @@ latex_documents = [
   ('implementation/index', 'Implementation.tex', u'RGVFlood User Interface Implemention',
    u'Andrew N.S. Ernest, Ph.D., P.E., BCEE, D.WRE \\and Christopher B. Fuller, Ph.D. \\and William Kirkey, Ph.D. \\and Peter Kirkey, \\and Linda Navarro, \\and Ivan Santos-Chavez, \\and Carlos Reyes',
    'manual'),
+  ('geodatamodel/index', 'GeoDataModel.tex', u'Survey Data Model Manual',
+   u'Christopher B. Fuller, Ph.D., \\and Linda Navarro, \\and Andrew N.S. Ernest, Ph.D., P.E., BCEE, D.WRE \\and William Kirkey, Ph.D. \\and Peter Kirkey, \\and Ivan Santos-Chavez',
+   'manual'),   
 ]
 
 # The name of an image file (relative to this directory) to place at the top of

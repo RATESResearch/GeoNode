@@ -1,18 +1,16 @@
 Survey Data Model Manual
-======================
+===========================
 The purpose of this Survey Data Model Manual is to provide guidance preparing digital survey databases to be delievered to RATES partners.  This is not intended to specify the process used, but to present standards and requirements of outpusts and deliverables.
 
 The Survey Manual will provide specific details of data collection methods to meet RATES partner and industry standard deliverables. 
 
 
-Documentation Version
------------------------
+**Documentation Version**
 
 This document versions are maintained an authorized as follows:
 
 :Version: RATES Survey Data Model Manual 0.1
-:Author: Stacey D. Lyle, PhD, RPLS
-:Authority: Christofer Fuller, PhD
+:Authority: Stacey D. Lyle, PhD, RPLS
 :Date: 2/18/2022
 :Editor: Linda Navarro
 
@@ -28,7 +26,7 @@ This document versions are maintained an authorized as follows:
       survdata/index.rst
       gismodel/index.rst
       drawings/index.rst
-      reporting/index.rst
+      .. reporting/index.rst
       glossary/index.rst
       
 
@@ -44,7 +42,7 @@ This document versions are maintained an authorized as follows:
       survdata/index.rst
       gismodel/index.rst
       drawings/index.rst
-      reporting/index.rst
+      .. reporting/index.rst
       glossary/index.rst
 
 

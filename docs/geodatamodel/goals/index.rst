@@ -1,5 +1,5 @@
 Goals of Geospatial Data Model
-==========================
+===============================
 
 RATES will utilize Geospatial Data Model to provide stakeholders with a greater understanding of how data models areas are:
 - Planning
@@ -18,24 +18,28 @@ RATES Geospatial databases will store the digital GIS data used in the map produ
 The most current version of these documents shall be used and obtained from the Geosptial Data Model standards for RATES Documents and Mapping webpage.
 
 Goals for Collecting
----------
+--------------------
 
 The Geospatial Data Model will provide requirments for collecting and adding Geospatial to the RATES tools.  The Geospatial Data Model includes:
- - Existing Databases
-  - Geospatial GIS Layers
-  - Surveying Data
-  - Elevation Data
-  - Surface Data
-  - Gage Data
-  - Hec Ras Models
-  - Other
- - New Databases
-  - REONS
-  - RATES Station Benchmarks
-  - RATES Station Site Surveys
-  - Hydrological Cross Section Surveys
-  - GPS on Benchmarks
-  - Other
+
+- Existing Databases
+
+    - Geospatial GIS Layers
+    - Surveying Data
+    - Elevation Data
+    - Surface Data
+    - Gage Data
+    - Hec Ras Models
+    - Other
+
+- New Databases
+
+    - REON
+    - RATES Station Benchmarks
+    - RATES Station Site Surveys
+    - Hydrological Cross Section Surveys
+    - GPS on Benchmarks
+    - Other
   
 Goal of Sharings
 ---------------------------------

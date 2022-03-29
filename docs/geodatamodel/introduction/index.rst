@@ -12,17 +12,17 @@ Field Surveys
 
 Field surveys are performed to collect information that is needed as input into the hydraulic models for Special Flood Hazard Areas (SFHAs) with high flood risk and may be needed for SFHAs with moderate flood risk. The field-surveyed data may include information for the following types of features:
 
- -	Cross Sections
- - 	Transects
- -  Temporary Bench Marks
- -	High Water Marks
- - 	Structures
-  - 	Bridges
-  -	Channels
-  -	Culverts
-  -	Dams
-  -	Levees
-  -	Coastal Structures
+  - Cross Sections
+  - Transects
+  - Temporary Bench Marks
+  - High Water Marks
+  - Structures
+  - Bridges
+  - Channels
+  - Culverts
+  - Dams
+  - Levees
+  - Coastal Structures
 
 
 The file should be developed in a format that includes data that correspond to the fields in the Geospatial Data Model section.

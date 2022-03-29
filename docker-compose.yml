@@ -171,6 +171,7 @@ services:
     container_name: docs4${COMPOSE_PROJECT_NAME}
     environment:
       - VIRTUAL_HOST=docs.${HTTP_HOST}
+      - LETSENCRYPT_HOST=docs.${HTTP_HOST}
 
   slides:
     build:

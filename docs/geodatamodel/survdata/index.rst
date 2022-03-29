@@ -29,6 +29,7 @@ Survey Code List
 -----------------
 .. list-table:: 
  :header-rows: 1
+ :widths: 20 30 50
   
  * - Code: 
    - Description	

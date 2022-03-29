@@ -14,10 +14,11 @@ RGVFlood
        :maxdepth: 2
        :caption: Contents:
 
-       introduction.rst
+       introduction/index.rst
        requirements/index.rst
        predevelopment/index.rst
-       implementation/index
+       implementation/index.rst
+       geodatamodel/index.rst
        glossary.rst
     ..   Requirements Validation
     ..   Quality Assurance Demonstration
