@@ -18,8 +18,11 @@ RGVFlood
        requirements/index.rst
        predevelopment/index.rst
        implementation/index.rst
-       t2requirements/index
+       model_requirements/t1requirements/index.rst
+       model_requirements/t2requirements/index.rst
+       model_requirements/t3requirements/index.rst
        geodatamodel/index.rst
+       bibliography.rst
        glossary.rst
     ..   Requirements Validation
     ..   Quality Assurance Demonstration
@@ -43,7 +46,7 @@ RGVFlood
     .. toctree::
        :hidden:
 
-       introduction.rst
+       introduction/index.rst
        requirements/index.rst
        predevelopment/index.rst
        implementation/index

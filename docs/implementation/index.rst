@@ -12,7 +12,7 @@ RGVFlood User interface Implementation
        goals/index
        interface/index
        instantiation/index
-       glossary
+..       glossary
 
 .. ifslides::
 
@@ -23,8 +23,7 @@ RGVFlood User interface Implementation
     .. toctree::
        :hidden:
 
-       introduction.rst
-       registration/index
+       introduction/index.rst
 
 .. ifnotslides::
     Indices and tables

@@ -26,9 +26,10 @@ This document versions are maintained an authorized as follows:
       survdata/index.rst
       gismodel/index.rst
       drawings/index.rst
-      .. reporting/index.rst
-      glossary/index.rst
+..      glossary
       
+..    reporting/index.rst
+
 
 .. ifslides::
 
@@ -42,8 +43,7 @@ This document versions are maintained an authorized as follows:
       survdata/index.rst
       gismodel/index.rst
       drawings/index.rst
-      .. reporting/index.rst
-      glossary/index.rst
+..      glossary
 
-
+..    reporting/index.rst
 

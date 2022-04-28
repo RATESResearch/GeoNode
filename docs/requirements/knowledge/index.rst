@@ -12,8 +12,8 @@ Knowledge
     .. toctree::
        :maxdepth: 2
 
-       assimilation.md
-       forecasting.rst
+       assimilation
+       forecasting
 
 .. ifslides::
 
@@ -30,5 +30,5 @@ Knowledge
        .. toctree::
           :hidden:
 
-          assimilation.md
-          forecasting.rst
+          assimilation
+          forecasting

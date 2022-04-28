@@ -40,10 +40,15 @@ release = '0.9.1'
 extensions = [
 #'myst_parser',
 #'sphinxcontrib.plantuml',
+'sphinxcontrib.bibtex',
 'sphinx.ext.autodoc',
 'hieroglyph',
 'sphinx.ext.todo',
+'sphinxcontrib.plantuml',
 ]
+
+bibtex_bibfiles = ['refs.bib']
+plantuml = 'java -jar /usr/share/plantuml/plantuml.jar'
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -208,6 +213,15 @@ latex_documents = [
   ('implementation/index', 'Implementation.tex', u'RGVFlood User Interface Implemention',
    u'Andrew N.S. Ernest, Ph.D., P.E., BCEE, D.WRE \\and Christopher B. Fuller, Ph.D. \\and William Kirkey, Ph.D. \\and Peter Kirkey, \\and Linda Navarro, \\and Ivan Santos-Chavez, \\and Carlos Reyes',
    'manual'),
+  ('model_requirements/t1requirements/index', 'T1Requirements.tex', u'Tier I Real-Time Model Requirements Determination',
+   u'Andrew N.S. Ernest, Ph.D., P.E., BCEE, D.WRE \\and Christopher B. Fuller, Ph.D. \\and William Kirkey, Ph.D. \\and Peter Kirkey, \\and Linda Navarro, \\and Ivan Santos-Chavez',
+   'manual'),   
+  ('model_requirements/t2requirements/index', 'T2Requirements.tex', u'Tier II Sub-Regional Model Requirements Determination',
+   u'Andrew N.S. Ernest, Ph.D., P.E., BCEE, D.WRE \\and Christopher B. Fuller, Ph.D. \\and William Kirkey, Ph.D. \\and Peter Kirkey, \\and Linda Navarro, \\and Ivan Santos-Chavez',
+   'manual'),      
+  ('model_requirements/t3requirements/index', 'T3Requirements.tex', u'Tier III Urban Model Requirements Determination',
+   u'Andrew N.S. Ernest, Ph.D., P.E., BCEE, D.WRE \\and Christopher B. Fuller, Ph.D. \\and William Kirkey, Ph.D. \\and Peter Kirkey, \\and Linda Navarro, \\and Ivan Santos-Chavez',
+   'manual'),         
   ('geodatamodel/index', 'GeoDataModel.tex', u'Survey Data Model Manual',
    u'Christopher B. Fuller, Ph.D., \\and Linda Navarro, \\and Andrew N.S. Ernest, Ph.D., P.E., BCEE, D.WRE \\and William Kirkey, Ph.D. \\and Peter Kirkey, \\and Ivan Santos-Chavez',
    'manual'),   

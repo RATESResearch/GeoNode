@@ -12,9 +12,9 @@ forecasting tools are more likely to be both Mechanistic and Deterministic.
    .. toctree::
       :maxdepth: 2
 
-      hydrologic.md
-      hydraulic.md
-      stormwater.md
+      hydrologic
+      hydraulic
+      stormwater
 
 .. ifslides::
 
@@ -27,6 +27,6 @@ forecasting tools are more likely to be both Mechanistic and Deterministic.
    .. toctree::
       :hidden:
 
-      hydrologic.md
-      hydraulic.md
-      stormwater.md
+      hydrologic
+      hydraulic
+      stormwater
