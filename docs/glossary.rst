@@ -43,17 +43,21 @@ Glossary
    GeoNode/db
        :term:`PostgreSQL` with :term:`PostGIS` extensions database server storing :term:`GeoNode` :term:`Django` and :term:`GeoServer` data.   
 
-   Kubernetes
-      A orchestration system facilites the deployment and management of containerized applications, with a specific focus on scaling to increase demand for the provided services.
-
    H&H 
       Hydrologic and Hydraulic
+
+   HAND
+      Height Above Nearest Drainage
+      <http://handmodel.ccst.inpe.br/>
 
    HPC
        High Performace Computing
 
    HPCC
        :term:`HPC` cluster
+
+   Kubernetes
+      A orchestration system facilites the deployment and management of containerized applications, with a specific focus on scaling to increase demand for the provided services.
 
    MPI
        Message Passing Interface
@@ -244,6 +248,9 @@ Glossary
 
    Python
        <https://www.python.org/>
+
+   USIBWC
+       United States International Boundary Water Commission
 
    Wizard.RGVFlood.com
        A web, mobile and desktop client-side application that, working with the server-side components at :term:`RGVFlood.com`, provides the end-user with the up-to-date analytics, visualization and decision support services from the core :term:`REON.cc` :term:`CI`.
