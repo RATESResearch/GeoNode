@@ -11,7 +11,7 @@ steps:
 
 - name: python
   entrypoint: bash
-  args: ["-c", "PATH=\"/builder/home/.local/bin:$$PATH\" && echo $$PATH && cd docs && make html"]
+  args: ["-c", "PATH=\"/builder/home/.local/bin:$$PATH\" && echo $$PATH && make html"]
 
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   args: ['gsutil', 'rsync', '-r', 'build/html/', 'gs://${_DOC_BUCKET}/']
