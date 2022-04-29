@@ -6,7 +6,8 @@ steps:
 
 - name: python
   entrypoint: bash
-  args: ["-c", "PATH=\"/builder/home/.local/bin:$$PATH\" && echo $$PATH && cd docs && make html"]
+  # args: ["-c", "PATH=\"/builder/home/.local/bin:$$PATH\" && echo $$PATH && cd docs && make html"]
+  args: ["-c", "PATH=\"/builder/home/.local/bin:$$PATH\" && echo $$PATH && make html"]
 
 - name: gcr.io/rgvflood/firebase
   args: ['deploy', '--project=rgvflood', '--only=hosting']
