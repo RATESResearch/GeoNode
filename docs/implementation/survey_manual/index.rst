@@ -26,12 +26,13 @@ This document versions are maintained an authorized as follows:
       :caption: Table of Contents
 
       introduction/index.rst
+      adopted/index.rst
       goals/index.rst
       geodetic/index.rst
       stationcontrol/index.rst
       stationsurvey/index.rst
       hydroxsection/index.rst
-      gnssonbm/index.rst
+      GNSSonBM/index.rst
       reporting/index.rst
       glossary/index.rst
       
