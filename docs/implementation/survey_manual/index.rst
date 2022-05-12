@@ -22,19 +22,19 @@ This document versions are maintained an authorized as follows:
 .. ifnotslides::
 
    .. toctree::
-      :maxdepth: 1
+      :maxdepth: 3
       :caption: Table of Contents
 
-      introduction/index.rst
-      adopted/index.rst
-      goals/index.rst
-      geodetic/index.rst
-      stationcontrol/index.rst
-      stationsurvey/index.rst
-      hydroxsection/index.rst
-      GNSSonBM/index.rst
-      reporting/index.rst
-      glossary/index.rst
+      introduction/index
+      adopted/index
+      goals/index
+      geodetic/index
+      stationcontrol/index
+      stationsurvey/index
+      hydroxsection/index
+      GNSSonBM/index
+      reporting/index
+      glossary/index
       
 
 .. ifslides::
@@ -44,15 +44,22 @@ This document versions are maintained an authorized as follows:
    .. toctree::
       :hidden:
 
-      introduction/index.rst
-      goals/index.rst
-      geodetic/index.rst
-      stationcontrol/index.rst
-      stationsurvey/index.rst
-      hydroxsection/index.rst
-      gnssonbm/index.rst
-      reporting/index.rst
-      glossary/index.rst
+   introduction/index
+      adopted/index
+      goals/index
+      geodetic/index
+      stationcontrol/index
+      stationsurvey/index
+      hydroxsection/index
+      GNSSonBM/index
+      reporting/index
+      glossary/index
 
 
+.. ifnotslides::
+    Indices and tables
+    ==================
 
+    * :ref:`genindex`
+    * :ref:`modindex`
+    * :ref:`search`
