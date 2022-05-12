@@ -1,2 +1,2 @@
 invoke
-git+git://github.com/nyergler/hieroglyph.git@hieroglyph-2.1.0
+-r docs/requirements.txt

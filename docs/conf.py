@@ -225,6 +225,9 @@ latex_documents = [
   ('geodatamodel/index', 'GeoDataModel.tex', u'Survey Data Model Manual',
    u'Christopher B. Fuller, Ph.D., \\and Linda Navarro, \\and Andrew N.S. Ernest, Ph.D., P.E., BCEE, D.WRE \\and William Kirkey, Ph.D. \\and Peter Kirkey, \\and Ivan Santos-Chavez',
    'manual'),   
+  ('tmp/surveydatamodel/index', 'SurveyDataModel.tex', u'Survey Data Model',
+   u'Christopher B. Fuller, Ph.D., \\and Linda Navarro, \\and Andrew N.S. Ernest, Ph.D., P.E., BCEE, D.WRE \\and William Kirkey, Ph.D. \\and Peter Kirkey, \\and Ivan Santos-Chavez',
+   'manual'),  
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
