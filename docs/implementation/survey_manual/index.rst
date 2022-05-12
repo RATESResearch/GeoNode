@@ -2,9 +2,9 @@ Survey Manual
 ======================
 This manual is primarily intended to be accessed online to obtain the latest version.  The online version takes precedence over printed copies, changes, updates, and edits. However, paper copies may be used in the field complete logs, task, surveys, and reports.
 
-This Survey Manual is intended to provide guidance for planning, excuting, verifying, and reporting surveys needed for stated RATE projects.
+This Survey Manual is intended to provide guidance for planning, executing, verifying, and reporting surveys needed for stated RATE projects.
 
-It is the responbility of Professional Land Surveyor to follow the State of Texas Rules and Acts, Federal, other State, Local and RATES standards of care.
+It is the responsibility of Professional Land Surveyor to follow the State of Texas Rules and Acts, Federal, other State, Local and RATES standards of care.
 
 
 Documentation Version
