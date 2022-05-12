@@ -61,7 +61,7 @@ The following is the general workflow.  Please refer to the NGS OPUS Shared Stat
 .. note::
  
 Your shared solution must be a high-quality solution:
-≥ 70% observations used and ambiguities fixed
-≤ 3 cm RMS
-≤ 4 cm peak-to-peak error ranges for latitude and longitude
-≤ 8 cm peak-to-peak error range for ellipsoid height
+:math:`\geq` 70\% observations used and ambiguities fixed
+:math:`\leq` 3 cm RMS
+:math:`\leq` 4 cm peak-to-peak error ranges for latitude and longitude
+:math:`\leq` 8 cm peak-to-peak error range for ellipsoid height
