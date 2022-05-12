@@ -26,7 +26,6 @@ This document versions are maintained an authorized as follows:
       :caption: Table of Contents
 
       introduction/index
-      adopted/index
       goals/index
       geodetic/index
       stationcontrol/index
@@ -44,8 +43,7 @@ This document versions are maintained an authorized as follows:
    .. toctree::
       :hidden:
 
-   introduction/index
-      adopted/index
+      introduction/index
       goals/index
       geodetic/index
       stationcontrol/index
