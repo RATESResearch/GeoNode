@@ -20,18 +20,18 @@ Units
   * - Cartesian Coordinate 
     - Meters (carried out to .001 meter)
     - X, Y, Z 
-  * - Geodetic Coordintes
-    - DMS Degrees, Minutes, and Seconds with 8 decimals, Ellispoidal Height US Survey Feet (carried out to .001 feet)
-    - Latidue, (-)Longidude, Ellipsoidal Height 
+  * - Geodetic Coordinates
+    - DMS Degrees, Minutes, and Seconds with 8 decimals, Ellipsoidal Height US Survey Feet (carried out to .001 feet)
+    - Latitude, (-)Longitude, Ellipsoidal Height 
   * - Grid Projected State Plane  Coordinates
     - Feet Horizontal coordinates and Orthometric Height (carried out to .001 feet)
-    - Northing, Easting, Orthometeric Height
+    - Northing, Easting, Orthometric Height
     
 .. note::
 
 Currently, U.S. Survey Feet is used in Texas. (Adoption of International Feet is expected.)
 
-Horizontial Datum
+Horizontal Datum
 -----------------
 Unless otherwise expressed State Plane Coordinate System in NAD83 (2011) with GRS 1980 Ellipsoid is used for all RATES projects for final products.
 
