@@ -1,3 +1,13 @@
+Goals & Objectives
+==================
+This Survey Manual describes the Implementation of the Surveying Adopted Industry Standards and Methods with Workflow exmples to:
+
+-   Establish RATES Station Control Benchmark
+-   Survey RATES Station Site
+-   Survey Hyrdological Transections and Structures
+-   Report Survey Results following Survey Data Model
+-   Produce needed surface and structure models for Hec Ras
+
 Adopted Industry Standards
 ==========================
 
