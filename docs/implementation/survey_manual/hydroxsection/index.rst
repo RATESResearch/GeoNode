@@ -1,28 +1,42 @@
 Hydrological Cross Section Survey
 =========================================
 
-A 3D model of Hyrdological Cross Sections shall be conducted with the requested two methods.
+Cross sections are developed based on the location layout of cross section lines and properties from other layers such as the River, Bank Lines, and Terrain layers.  Cross sections should be laid out perpendicular to where water will flow in the channel and overbank areas. 
 
-Method 1- Unmanned Aircraft System (UAS)
+Blocked Obstructions
+======================
+
+Blocked areas are used to identify areas where a cross section should not have conveyance based on a physical obstruction built in the floodplain but that is not represented in the terrain model.  These areas are represented with polygon areas where large areas of in-fill may occur in the floodplain or other man-made structures (like an old bridge support structure).  When creating an blocked obstruction polygon, the user will be asked to provide a elevation height (the default elevation will be defined by the highest elevation on the terrain model at intersection of the blocked polygon with cross sections).  
+
+Methodology
+============
+
+A 3D model of Hyrdological Cross Sections and Block Obstructions shall be conducted with the requested two methods.
+-  Remotely Sensed with Photogrammetry or LiDAR
+-  Physical Survey with Terrestrial Surveying Equipment (Total Stations, Levels, Scanners, or GNSS)
+
+Method 1- Remotely Sensed
 =========================================
 
-A UAS utilizes hardward and software to generate a 3D point cloud Digital Surface Model (DSM) of the RATES Station Benchmark Site. Only 14 CFR FAA 107 Certified Remote Piolts for commericial operation shall have conduct UAS Surveys.  The Operations Over People rule became effective on April 21, 2021. Drone pilots operating under Part 107 may fly at night, over people and moving vehicles without a waiver as long as they meet the requirements defined in the rule. Airspace authorizations are still required for night operations in controlled airspace under 400 feet.  Certified Remote Pilots are full responsible for opperation of UAS for RATES Station Benchmark Site Surveying. Operators shall create their own safety standards to meet their professional and certification requirments. 
+Professional obtained remotely sensed data from aerial platforms such as Satellite, aircraft, or Unmanned Aircraft System may be used.  All data should be tested to ensure it meets industry standards.
+
+A UAS utilizes hardware and software to generate a 3D point cloud Digital Surface Model (DSM) of the RATES Station Benchmark Site. Only 14 CFR FAA 107 Certified Remote Pilots for commercial operation shall have conduct UAS Surveys.  The Operations Over People rule became effective on April 21, 2021. Drone pilots operating under Part 107 may fly at night, over people and moving vehicles without a waiver as long as they meet the requirements defined in the rule. Airspace authorizations are still required for night operations in controlled airspace under 400 feet.  Certified Remote Pilots are full responsible for operation of UAS for RATES Station Benchmark Site Surveying. Operators shall create their own safety standards to meet their professional and certification requirements. 
 
 Equipment
 ------------
 
 UAS 
  - All equipment and accessories will be modern, undamaged, and not reconditioned, remanufactured, nor recertified. All equipment software should be current to the manufactures releases.
- - UAS equipment used shall be capibile of working with Pix4Dcapture that can be found at `Suported Drones Pix4Dcapture <https://support.pix4d.com/hc/en-us/articles/203991609-Supported-drones-cameras-and-controllers-PIX4Dcapture>`_
- - Smartphone suport Pix4Dcapture
+ - UAS equipment used shall be capabile of working with Pix4Dcapture that can be found at `Suported Drones Pix4Dcapture <https://support.pix4d.com/hc/en-us/articles/203991609-Supported-drones-cameras-and-controllers-PIX4Dcapture>`_
+ - Smartphone support Pix4Dcapture
 
 GNSS
  - GNSS equipment used for Ground Control Points (GCPs) shall be a Real Time Kinematic (RTK) GNSS rover equipment, operating at centimeter-level (i.e. survey-grade) 
 accuracy.
 
 Ground Targets
- - GCPs are a points with of known coordinates in the area of interest. Coordinates are measured with GNSS RTK surveying methods and used to georeference the generated point cloud.
- - 10 highly visible GCP targets shall be set at the RATES Station Benchmark Site to obtain the coordinates needed to georeference and check the generated point cloud.
+ - GCPs are a points with of known coordinates in the area of interest. Coordinates are measured with GNSS RTK surveying methods and used to georeferenced the generated point cloud.
+ - 10 highly visible GCP targets shall be set at the RATES Station Benchmark Site to obtain the coordinates needed to georeferenced and check the generated point cloud.
 
 
 Software
@@ -40,33 +54,33 @@ Workflow
 The following is the general workflow.  Please refer to the Pix4Dcapture manual details.
 
 .. code-block:: yaml
-1. Optain 14 CFR FAA 107 Certified Remote Piolts
+1. Obtain 14 CFR FAA 107 Certified Remote Pilots
 2. Complete the RATE's Tutorial on UAS Station Benchmark Surveying Training
 3. Verify all equipment is charged and updated with current software.
-4. Verify that a rights and premissions to opperate UAS at RATES Station Benchmark Site are secure.
+4. Verify that a rights and permissions to operate UAS at RATES Station Benchmark Site are secure.
 5. Set GCPs 
- - Place in a geometeric distribution 
+ - Place in a geometric distribution 
  - At least 6 targets should be placed per site to ensure the algorithm will run successfully.
  - Targets should be separated by at least 10 meters (~30 ft).
  - Targets should be placed on flat and static surfaces.
- - Targets should always be visible in the images that capture the location of the target.The mark must be durable, have a stable setting, and good satellite visibility.
+ - Targets should always be visible in the images that capture the location of the target. The mark must be durable, have a stable setting, and good satellite visibility.
  - Collect RTK solutions on each GCP
 6. Configure Pix4Dcapture
- - Select Dobule Grid 3D Mission
- - Select safe flying heith that generates a minimal Ground Sample Distance (GSD) of 0.80 in/pixel
+ - Select Double Grid 3D Mission
+ - Select safe flying heigth that generates a minimal Ground Sample Distance (GSD) of 0.80 in/pixel
  - Select Angle Camera at 60%
  - Select Front and Side Overlap of 85% 
  - Select Drone Speed Normal
 7. In the Map view move Area of Interest (AOI) mission area centered on RATES Station Benchmark Site and resize to capture topographic relief area needed for best surface model (For example 300' x 300'). 
 8. Collect data following your safety standards.
 9. Consider a second backup data collection, but rotate the AOI 45 degrees from first flight mission.
-10. Additional images might be necssary to obtain under any structures using the Pix4Dcapture Circular for signle model.
+10. Additional images might be necessary to obtain under any structures using the Pix4Dcapture Circular for single model.
 11. Download to RATES shared drive
  - All images
  - GCP RTK solutions following Survey Data Model
  - Pix4D mission Project files
 12. Consultant or RATES will process captured images and GCP using Pix4Dmapper
-13. RATES will notify professional of the acceptance of tne RATES Station Benchmark Site survey
+13. RATES will notify professional of the acceptance of the RATES Station Benchmark Site survey
 
   
 .. note::
@@ -86,6 +100,11 @@ GNSS
  - GNSS equipment used for Ground Control Points (GCPs) shall be a Real Time Kinematic (RTK) GNSS rover equipment, operating at centimeter-level (i.e. survey-grade) 
 accuracy.
 
+Total Station
+-  Surveying grade Total Station capable of capturing angle, distance, height/elevation with coordaintes shall be used.
+
+Levels
+-  Digital levels shall be used to transfer heights/elevation from control to stations or points of insterest.
 
 
 Sketches
@@ -102,8 +121,8 @@ The L_Survey_Pt table is required for field survey data generated.
 Workflow
 -----------
 
-The following is the general workflow.  Please refer to the Pix4Dcapture manual details.
+TBD
 
 .. code-block:: yaml
-TBD
-Point cloud results will be tested in RATES mapping software against existing surface and surveying models.
+
+
