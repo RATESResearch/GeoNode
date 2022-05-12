@@ -44,5 +44,5 @@ Conversions
 Conversions between Geodetic and Grid coordinates shall be consistent with published standards and methods uses shall be documented with all deliverables.
 
 Transformation
---------------
+---------------
 Transformations between datums shall be consistent with published standards and methods uses shall be documented with all deliverables.
