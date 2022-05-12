@@ -1,10 +1,10 @@
 Goals & Objectives
 ==================
-This Survey Manual describes the Implementation of the Surveying Adopted Industry Standards and Methods with Workflow exmples to:
+This Survey Manual describes the Implementation of the Surveying Adopted Industry Standards and Methods with Workflow examples to:
 
 -   Establish RATES Station Control Benchmark
 -   Survey RATES Station Site
--   Survey Hyrdological Transections and Structures
+-   Survey Hydrological  Transections and Structures
 -   Report Survey Results following Survey Data Model
 -   Produce needed surface and structure models for Hec Ras
 
@@ -35,7 +35,7 @@ Information contained in this Survey Manual is has been adopted from industry st
     - Provides the digital GIS data models used in the map production process.
   * - USACE
     - `FEC-RAS River User Manual 2/2016 <https://www.hec.usace.army.mil/software/hec-ras/documentation/HEC-RAS%205.0%20Users%20Manual.pdf>`_
-    - Provides instructions to preform one-dimensional steady flow, one and two-dimensional unsteady flow calculation, sediment transport bed compuations and water quality modeling.   
+    - Provides instructions to preform one-dimensional steady flow, one and two-dimensional unsteady flow calculation, sediment transport bed computations and water quality modeling.   
   * - TxDOT
     - `TxDOT Survey Manual 4/2016 <http://onlinemanuals.txdot.gov/txdotmanuals/ess/index.htm>`_
     - Provides surveying within TxDOT ROW.
@@ -46,6 +46,6 @@ Information contained in this Survey Manual is has been adopted from industry st
     - `Texas Board of Professional Engineers and Land Surveyors Law and Rules <https://pels.texas.gov/downloads/lawrules.pdf>`_
     - Minimum Standards of practice concerning Professional Engineering and Surveying.
     
-Where standards and requirements contained and described in this manual are more comprehensive you are refered to the original standard documents.
+Where standards and requirements contained and described in this manual are more comprehensive you are referred to the original standard documents.
 
 It shall be duty of each Registered Professional Engineer or Land Surveyor to counsel with RATES to determine the purpose of any engineering or surveying service so as to be certain the needs of the RATES are met. The specific purpose of a survey will determined by the service needed.
