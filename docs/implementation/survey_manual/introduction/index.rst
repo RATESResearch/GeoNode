@@ -3,9 +3,9 @@ Introduction
 
 This manual is primarily intended to be accessed online to obtain the latest version.  The online version takes precedence over printed copies, changes, updates, and edits. However, paper copies may be used in the field complete logs, task, surveys, and reports.
 
-This Survey Manual is intended to provide guidance for planning, excuting, verifying, and reporting surveys needed for stated RATE projects.
+This Survey Manual is intended to provide guidance for planning, executing, verifying, and reporting surveys needed for stated RATE projects.
 
-It is the responbility of Professional Land Surveyor to follow the State of Texas Rules and Acts, Federal, other State, Local and RATES standards of care.
+It is the responsibility of Professional Land Surveyor to follow the State of Texas Rules and Acts, Federal, other State, Local and RATES standards of care.
 
 The contractor shall collect Geospatial Data with Global Navigation Satellite System (GNSS) coordinate locations and elevations for the work to be performed as part of this project. The collection of GNSS coordinates and elevations shall comply with the requirements of Geospatial Data Model.
 
@@ -26,7 +26,7 @@ The GNSS Receiver shall support simultaneous signal tracking of all:
  -  SBAS: L1C/A, L5
  -  Galileo: L1CBOC, E5A, E5B, E5AltBO
 
-Semi-Codelss receivers that tract Anti-Spoofing (A/S) (P(y)-code)   shall measure L1 C/A pseudo ranges, L2C and L1C range measurements,  and the full cycle L1, L2 and L5 carrier phases.
+Semi-Codeless receivers that tract Anti-Spoofing (A/S) (P(y)-code)   shall measure L1 C/A pseudo ranges, L2C and L1C range measurements,  and the full cycle L1, L2 and L5 carrier phases.
 
 Receivers shall be able to generate RINEX 3 and connect to a RTK-RTN network.
 
