@@ -20,7 +20,7 @@ reference monuments for final evaluation and approval of adjusted coordinates.
 
 The residual error shall be noted shall  be within tolerances set forth. 
 Your shared solution must be a high-quality solution:
- - :math:\geq 70% observations used and ambiguities fixed
+ - :math:\geq 70\% observations used and ambiguities fixed
  - :math:\leq 3 cm RMS
  - :math:\leq 4 cm peak-to-peak error ranges for latitude and longitude
  - :math:\leq 8 cm peak-to-peak error range for ellipsoid height
