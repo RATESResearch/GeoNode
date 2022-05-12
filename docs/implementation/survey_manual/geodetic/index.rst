@@ -33,8 +33,16 @@ Currently, U.S. Survey Feet is used in Texas. (Adoption of International Feet is
 
 Horizontial Datum
 -----------------
-Unless otherwise expressed State Plane Coordinate System in NAD83 (2011) with GRS 1980 Ellipsoid is used for all RATES projects.
+Unless otherwise expressed State Plane Coordinate System in NAD83 (2011) with GRS 1980 Ellipsoid is used for all RATES projects for final products.
 
 Vertical Datum
 --------------
 Unless otherwise expressed NAVD 1988 with the most current Geoid should.
+
+Conversions
+--------------
+Conversions between Geodetic and Grid coordinates shall be consistent with published standards and methods uses shall be documented with all deliverables.
+
+Transformation
+--------------
+Transformations between datums shall be consistent with published standards and methods uses shall be documented with all deliverables.
