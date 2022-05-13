@@ -18,7 +18,6 @@ RGVFlood
        1.2 Regional Hydrology and Hydraulics <RegionalHandH/index.rst>
        1.3 Real Time Hydrologic Systems <RTHS/index.rst>
        1.4 Cyberinfrastructure <Cyberinfrastructure/index.rst>
-       requirements/index.rst
        predevelopment/index.rst
        implementation/index.rst
        model_requirements/t1requirements/index.rst
@@ -51,7 +50,6 @@ RGVFlood
        :hidden:
 
        introduction/index.rst
-       requirements/index.rst
        predevelopment/index.rst
        implementation/index
     ..   glossary.rst

@@ -19,10 +19,11 @@ steps:
 
 # Clone the repository
 - name: 'gcr.io/cloud-builders/git'
-  args:
-  - clone
-  - --recurse-submodules
-  - git@github.com:RATESResearch/RGVFlood
+  args: ['submodule', 'update', '--init', '--recursive']
+  # args:
+  # - clone
+  # - --recurse-submodules
+  # - git@github.com:RATESResearch/RGVFlood
   volumes:
   - name: 'ssh'
     path: /root/.ssh
