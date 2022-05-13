@@ -7,7 +7,7 @@ The Tiered Regional Hydrologic and Hydraulic Modeling Framework consists of 3 co
 *   **Tier II** On-Demand Sub-Regional Hydraulic Model: Currently being developed and implemented using the :term:`HEC-RAS` hydraulic model. :term:`HEC-RAS` is being applied to 6 selected sub-basins within the :term:`LRGV` to demonstrate the coupling of the :term:`Tier I` and :term:`Tier II` modeling frameworks within the :term:`RGVFlood` platform.
 *   **Tier III** Urban Stormwater Model: Off-line Urban Stormwater model targeted for integration within the 4th quarter of 2022. The model intended for integration is :term:`SWMM`.
 
-The structure of the Tiered approach allows or *mix-and-match* applications, where the configuration of Tiers applied to a specific problem can be tuned to the locations specific needs and hydrography. Further, the approach promotes the potential of expansion to incorporate ensemble forecasts by incorporating additional models and data within and across individual Tiers.
+The structure of the Tiered approach allows or *mix-and-match* applications, where the configuration of Tiers applied to a specific problem can be tuned to the locations specific needs and hydrography. Tha approach promotes the potential extended model applications that incorporate ensemble forecasts of additional models and data within and across individual Tiers.
 
 The Tiered modeling components are integrated into the :term:`RGVFlood` user interface components to provide a seamless user experience to maximize focus on analysis and decision making rather than data collection and model development:
 
