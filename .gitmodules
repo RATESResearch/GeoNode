@@ -1,3 +1,6 @@
 [submodule "docs/Cyberinfrastructure/UIEnhancements/UIRequirements"]
 	path = docs/Cyberinfrastructure/UIEnhancements/UIRequirements
 	url = git@github.com:RATESResearch/UIRequirements
+[submodule "docs/Cyberinfrastructure/UIEnhancements/UIPreDevelopment"]
+	path = docs/Cyberinfrastructure/UIEnhancements/UIPreDevelopment
+	url = git@github.com:RATESResearch/UIPreDevelopment
