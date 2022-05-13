@@ -1,7 +1,7 @@
-Real Time Hydrologic Stations
+1.3 Real Time Hydrologic Stations
 =============================
 
-In parallel to the adaptive-resolution hydrologic and hydraulic characterization of the watershed, a network of Real Time Hydrologic Stations (RTHS) will be deployed across the LRGV as a catalyst for inter-jurisdictional collaboration and holistic flood, water quality and ecological management. RTHS deployments will be strategically located to serve the following decision making needs:
+In parallel to the adaptive-resolution hydrologic and hydraulic characterization of the watershed, a network of :term:`RTHS` will be deployed across the :term:`LRGV` as a catalyst for inter-jurisdictional collaboration and holistic flood, water quality and ecological management. :term:`RTHS` deployments will be strategically located to serve the following decision making needs:
 
 *   Locations on the main drains and Resaca networks to characterize regional drainage patterns and to promote holistic decision making regarding regional flood-flow routing and siting of Regional Detention Facilities.
 *   Local, off-mainstem locations to provide flood-front early warning for localities experiencing recurring flooding, and to validate catchment-scale hydraulic models used for design development of structural controls such as high-volume pumping and major diversion structure or culverts.
