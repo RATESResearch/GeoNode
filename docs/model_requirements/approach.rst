@@ -9,7 +9,7 @@ The prcess of deployment accross all three Tiers falls into 3 iterative and cros
 
 .. uml:: 
    :align: center
-   :caption: Model Tier Integration Approach
+   :caption: Model Tier Integration Approach (x-axis is % complete)
 
    robust  "Tier I" as tier1
    robust  "Tier II" as tier2

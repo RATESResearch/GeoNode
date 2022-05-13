@@ -3,12 +3,12 @@ Cloud Services Cyberinfrastructure for the Tiered Modeling Framework
 
 With the exception of the :term:`RTHS` in-ground and in-stream hardware, all the cyberinfrastructure utilized for the the production Tiered modeling framework is both deployed to and delivered from cloud infrastructure providers.
 
-Computing hardware experiences rapid depreciation both in value and competitive performance, with an effective lifecycle of between 5 - 10 years. Further, for instantaneuos use, where services are spun up and shut-down on demand, the cost of use is generally a fraction of the equivalent amortized cost of purchasing harware.
+Computing hardware experiences rapid depreciation both in value and competitive performance, with an effective lifecycle of between 5 - 10 years. Further, for instantaneous use of hardware, where services are spun up and shut-down on demand, the cost of use is generally a fraction of the equivalent amortized cost of purchasing hardware.
 
 High Performance Computing
 --------------------------
 
-:term:`HPC` capacity is required for the current incarnations of the :term:`Tier I` model, :term:`WRF-Hydro`, for continuous execution. All mainstream regional hydrologic and hydraulic models are developed as monlithic applications, although the most detailed and computationally intensive :term:`WRF-Hydro` included, are optimized for parallel execution on traditional :term:`HPC` s. Most :term:`HPC` s consist of a cluster of computing nodes connected via an ultra-high speed network and communication between processed is effected most often using :term:`MPI`.
+:term:`HPC` capacity is required for the current incarnations of the :term:`Tier I` model, :term:`WRF-Hydro`, for continuous execution. All mainstream regional hydrologic and hydraulic models are developed as monlithic applications, although the most detailed and computationally intensive :term:`WRF-Hydro` included, are optimized for parallel execution on traditional :term:`HPC` s. Most :term:`HPC` s consist of a cluster of computing nodes connected via an ultra-high speed network where communication between processes is effected most often by the *Message Passing Interface* :term:`MPI`.
 
 All three major cloud  providers offer :term:`HPC` services:
 
