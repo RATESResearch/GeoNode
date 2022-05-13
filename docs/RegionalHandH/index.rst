@@ -7,7 +7,7 @@ Through the :term:`RWRAC`, a :term:`H&H` study, greater in local detail and scop
        :maxdepth: 2
        :caption: Contents:
 
-       1.2.1 Data Collection & Assimilation (Regional, Sub-Regional & Urban)
-       1.2.2 Regional Modeling (4 Study Basins, 6 Drainage Pathways)
-       1.2.3 Sub-Regional Modeling (6 HUC-10s)
-       1.2.4 Urban Modeling (20 Municipalities)
+       1.2.1 Data Collection & Assimilation <DataCollection/index.rst>
+       1.2.2 Regional Modeling
+       1.2.3 Sub-Regional Modeling
+       1.2.4 Urban Modeling
