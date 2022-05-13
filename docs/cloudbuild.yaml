@@ -37,7 +37,7 @@ steps:
   args: ["-c", "PATH=\"/builder/home/.local/bin:$$PATH\" && echo $$PATH && make html"]
 
 - name: gcr.io/rgvflood/firebase
-  args: ['deploy', '--project=rgvflood', '--only=hosting']
+  args: ['deploy', '--project=waterwizard', '--only=hosting']
 
 availableSecrets:
   secretManager:
