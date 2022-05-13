@@ -255,3 +255,5 @@ Glossary
    Wizard.RGVFlood.com
        A web, mobile and desktop client-side application that, working with the server-side components at :term:`RGVFlood.com`, provides the end-user with the up-to-date analytics, visualization and decision support services from the core :term:`REON.cc` :term:`CI`.
 
+    WRDA
+       Water Resources Development Act
