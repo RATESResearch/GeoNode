@@ -36,7 +36,7 @@ steps:
   entrypoint: bash
   args: ["-c", "PATH=\"/builder/home/.local/bin:$$PATH\" && echo $$PATH && make html"]
 
-- name: gcr.io/waterwizard/firebase
+- name: gcr.io/rgvflood/firebase
   args: ['deploy', '--project=rgvflood', '--only=hosting']
 
 availableSecrets:
