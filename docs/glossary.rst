@@ -215,13 +215,6 @@ Glossary
    VIC 
        Variable Infiltration Capacity (VIC) Macroscale Hydrologic Model.  <https://vic.readthedocs.io/en/master/>
 
-   WPS 
-       WRF Preprocessing System
-
-   WRF-Hydro 
-       Weather Research and Forecasting Model Hydrological modeling system.   <https://ral.ucar.edu/projects/wrf_hydro/overview>
-
-
    SWMM 
        Stormwater Management Model
 
@@ -255,5 +248,12 @@ Glossary
    Wizard.RGVFlood.com
        A web, mobile and desktop client-side application that, working with the server-side components at :term:`RGVFlood.com`, provides the end-user with the up-to-date analytics, visualization and decision support services from the core :term:`REON.cc` :term:`CI`.
 
-    WRDA
+   WRDA
        Water Resources Development Act
+
+   WPS 
+       WRF Preprocessing System
+
+   WRF-Hydro 
+       Weather Research and Forecasting Model Hydrological modeling system.   <https://ral.ucar.edu/projects/wrf_hydro/overview>
+
