@@ -10,3 +10,15 @@
 [submodule "docs/Cyberinfrastructure/UIModelIntegration/TieredModeling"]
 	path = docs/Cyberinfrastructure/UIModelIntegration/TieredModeling
 	url = git@github.com:RATESResearch/TieredModeling
+[submodule "docs/Cyberinfrastructure/UIModelIntegration/Tier1/Tier1Requirements"]
+	path = docs/Cyberinfrastructure/UIModelIntegration/Tier1/Tier1Requirements
+	url = git@github.com:RATESResearch/Tier1Requirements
+[submodule "docs/Cyberinfrastructure/UIModelIntegration/Tier2/Tier2Deployment"]
+	path = docs/Cyberinfrastructure/UIModelIntegration/Tier2/Tier2Deployment
+	url = git@github.com:RATESResearch/Tier2Deployment.git
+[submodule "docs/Cyberinfrastructure/UIModelIntegration/Tier2/Tier2Requirements"]
+	path = docs/Cyberinfrastructure/UIModelIntegration/Tier2/Tier2Requirements
+	url = git@github.com:RATESResearch/Tier2Requirements
+[submodule "docs/Cyberinfrastructure/UIModelIntegration/Tier2/Tier2Implementation"]
+	path = docs/Cyberinfrastructure/UIModelIntegration/Tier2/Tier2Implementation
+	url = git@github.com:RATESResearch/Tier2Implementation
