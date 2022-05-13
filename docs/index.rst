@@ -15,6 +15,7 @@ RGVFlood
        :caption: Contents:
 
        introduction/index.rst
+       RegionalHandH/index.rst
        requirements/index.rst
        predevelopment/index.rst
        implementation/index.rst
