@@ -8,7 +8,7 @@ In parallel to the adaptive-resolution hydrologic and hydraulic characterization
 
 The combination of adaptive resolution forecasting and validation with RTHS data will provide high confidence in early warnings. Further, as has been used in other water management domains (drinking water distribution and wastewater collection), deviations between model forecasts and RTHS data can be used to identify impending structural failures.
 
-The RTHS deployments will be served by the :term:`REON`` Cyberinfrastructure :term:`REON.cc`` that has been in continuous operation for 15 years, currently serving over 70 :term:`RTHS`` in providing real time decision support hydrologic and water quality data to local, regional and state decision makers.
+The RTHS deployments will be served by the :term:`REON` Cyberinfrastructure :term:`REON.cc` that has been in continuous operation for 15 years, currently serving over 70 :term:`RTHS` in providing real time decision support hydrologic and water quality data to local, regional and state decision makers.
 
 RTHS sensors and base stations are designed, developed and deployed by :term:`RATES` with a primary vision of “democratizing water intelligence” by making them affordable to small organizations. This is accomplished by reducing the component and life cycle of the incorporated technologies without sacrificing reliability, accuracy and precision. Operational costs are further reduced, and deployment sustainability is maximized by providing deployment strategies via a membership subscription model. This affords member entities turnkey solutions with nominal initial and ongoing annual investments.
 

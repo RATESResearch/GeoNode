@@ -32,28 +32,7 @@ This document versions are maintained an authorized as follows:
       stationsurvey/index
       hydroxsection/index
       GNSSonBM/index
-      reporting/index
-      glossary/index
       
-
-.. ifslides::
-
-   Andrew N.S. Ernest, Ph.D., P.E., BCEE, D.WRE
-
-   .. toctree::
-      :hidden:
-
-      introduction/index
-      goals/index
-      geodetic/index
-      stationcontrol/index
-      stationsurvey/index
-      hydroxsection/index
-      GNSSonBM/index
-      reporting/index
-      glossary/index
-
-
 .. ifnotslides::
     Indices and tables
     ==================

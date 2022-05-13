@@ -25,7 +25,7 @@ RGVFlood
        model_requirements/t2requirements/index.rst
        model_requirements/t3requirements/index.rst
        geodatamodel/index.rst
-       tmp/surveydatamodel/index.rst
+       implementation/survey_manual/index.rst
        bibliography.rst
        glossary.rst
     ..   Requirements Validation
