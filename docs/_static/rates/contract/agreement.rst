@@ -1505,29 +1505,6 @@ This Task is broken over two activities:
    estimating these costs are provided above and include personnel time
    and effort and associated equipment and supplies.
 
-*Task 1.4 Cyberinfrastructure*
-
-
-
-Activities in this task include
-
--  Activity 1.4.1 User Interface Enhancements. Enhancements to the
-   current REON.cc web interface to incorporate decision support tools
-   and model execution. Anticipated costs include approximately 4-person
-   months of effort and associated equipment and supplies.
-
--  Activity 1.4.2 Model Integration. Integration of the selected models
-   into the REON.cc codebase and database. Anticipated costs include
-   approximately 6-person months of effort and associated equipment and
-   supplies. Equipment costs include High Performance Computing for
-   model execution.
-
--  Activity 1.4.3 Database Enhancements. Enhancements to the current
-   REON.cc data structures to incorporate hydrographic and model run
-   file data. Anticipated costs include approximately 6-person months of
-   effort and associated equipment and supplies. Equipment costs include
-   redundant database servers and storage arrays.
-
 Objective 2: Identification, Assessment & Prioritization of Regional
 Flood Control Projects
 
