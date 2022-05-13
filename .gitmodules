@@ -7,3 +7,6 @@
 [submodule "docs/Cyberinfrastructure/UIImplementation"]
 	path = docs/Cyberinfrastructure/UIEnhancements/UIImplementation
 	url = git@github.com:RATESResearch/UIImplementation
+[submodule "docs/Cyberinfrastructure/UIModelIntegration/TieredModeling"]
+	path = docs/Cyberinfrastructure/UIModelIntegration/TieredModeling
+	url = git@github.com:RATESResearch/TieredModeling
