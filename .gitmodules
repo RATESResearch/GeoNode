@@ -31,6 +31,6 @@
 [submodule "StandardsPractices"]
 	path = StandardsPractices
 	url = git@github.com:RATESResearch/StandardsPractices
-[submodule "docs/RGVFloodCIDeployment"]
-	path = docs/RGVFloodCIDeployment
+[submodule "docs/Cyberinfrastructure/UIEnhancements/RGVFloodCIDeployment"]
+	path = docs/Cyberinfrastructure/UIEnhancements/RGVFloodCIDeployment
 	url = git@github.com:RATESResearch/RGVFloodCIDeployment
