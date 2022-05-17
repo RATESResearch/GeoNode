@@ -22,9 +22,9 @@
 [submodule "docs/Cyberinfrastructure/UIModelIntegration/Tier2/Tier2Implementation"]
 	path = docs/Cyberinfrastructure/UIModelIntegration/Tier2/Tier2Implementation
 	url = git@github.com:RATESResearch/Tier2Implementation
-[submodule "docs/RegionalHandH/DataCollection/DataDictionary/GeoDataModel"]
-	path = docs/RegionalHandH/DataCollection/DataDictionary/GeoDataModel
-	url = git@github.com:RATESResearch/GeoDataModel.git
 [submodule "docs/RegionalHandH/DataCollection/SurveyPrep/SurveyManual"]
 	path = docs/RegionalHandH/DataCollection/SurveyPrep/SurveyManual
 	url = git@github.com:RATESResearch/SurveyManual
+[submodule "docs/RegionalHandH/DataCollection/DataDictionary/GeoDataModel"]
+	path = docs/RegionalHandH/DataCollection/DataDictionary/GeoDataModel
+	url = git@github.com:RATESResearch/GeoDataModel
