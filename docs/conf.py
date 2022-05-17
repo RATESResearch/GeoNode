@@ -9,6 +9,9 @@
 
 import os
 import sys
+from dotenv import load_dotenv 
+
+load_dotenv() 
 
 #on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 on_rtd = True
@@ -24,12 +27,16 @@ on_rtd = True
 
 # -- Project information -----------------------------------------------------
 
-project = 'RGVFlood'
-copyright = '2021, Research, Applied Technology, Education & Service, Inc.'
-author = 'Andrew N.S. Ernest, Ph.D., P.E., BCEE, D.WRE'
+project = os.environ.get('PROJECT_NAME', 'RGVFlood')
+
+copyright = os.environ.get('COPYRIGHT_YEAR', '2022') \
+    + ', ' \
+    + os.environ.get('ORGANIZATION', 'Research, Applied Technology, Education & Service, Inc.')
+
+author = os.environ.get('AUTHOR', 'Andrew N.S. Ernest, Ph.D., P.E., BCEE, D.WRE')
 
 # The full version, including alpha/beta/rc tags
-release = '0.9.1'
+release = os.environ.get('VERSION','0.0.1')
 
 
 # -- General configuration ---------------------------------------------------
@@ -47,7 +54,7 @@ extensions = [
 'sphinxcontrib.plantuml',
 ]
 
-bibtex_bibfiles = ['refs.bib']
+bibtex_bibfiles = ['references.bib']
 plantuml = 'java -jar /usr/share/plantuml/plantuml.jar'
 
 # Add any paths that contain templates here, relative to this directory.
@@ -116,10 +123,10 @@ else:
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-html_title = "RGVFlood"
+html_title = os.environ.get('PROJECT_TITLE', 'RATES, Inc., RGVFlood Documentation')
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
-html_short_title = "RGVFlood"
+html_short_title = project
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
@@ -177,7 +184,7 @@ html_static_path = ['_static']
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'RGVFlood'
+htmlhelp_basename = project
 
 pdf_documents = [('index', u'rst2pdf', u'Sample rst2pdf doc', u'Your Name'),]
 # index - master document
@@ -185,7 +192,8 @@ pdf_documents = [('index', u'rst2pdf', u'Sample rst2pdf doc', u'Your Name'),]
 # Sample rst2pdf doc - title of the pdf
 # Your Name - author name in the pdf
 
-# -- Options for LaTeX output --------------------------------------------------
+# -- Options for LaTeX output
+# --------------------------------------------------
 
 latex_elements = {
 # The paper size ('letterpaper' or 'a4paper').
@@ -196,38 +204,48 @@ latex_elements = {
 
 # Additional stuff for the LaTeX preamble.
 'preamble': '\\usepackage{svg}',
+
+'releasename': html_title+'\par Project Deliverable ID',
+
+'maketitle': r''' 
+\sphinxmaketitle
+
+    %\renewcommand{\familydefault}{\sfdefault}
+    \newcommand\signature[3]{% Role; Name; Department
+    %\begin{center}
+    {\sffamily
+    \vspace{1cm}\par
+    \textbf{#1}:\par
+        \begin{minipage}{10cm}
+        \centering
+        \vspace{3cm}\par
+        \rule{10cm}{1pt}\par
+        \textbf{#2}\par
+        #3%
+        \end{minipage}
+    }
+    %\end{center}
+    }
+    \newcommand\insertdate[1][\today]{\vfill\begin{flushright}#1\end{flushright}}
+
+    {\LARGE\sffamily \textbf{Approval Page}}
+    
+    \signature{Technical Review By}{Christopher B. Fuller, Ph.D.}{Chief of Operations}
+    
+    \signature{Final Approval For Submission}{Andrew N.S. Ernest, Ph.D., P.E., BCEE, D.WRE}{Chief Executive Officer}
+        
+    \insertdate
+
+''',
 }
 
+authors = author + ' ' + os.environ.get('OTHER_AUTHORS', '')
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'RGVFlood.tex', u'RGVFlood',
-   u'Andrew N.S. Ernest, Ph.D., P.E., BCEE, D.WRE \\and Christopher B. Fuller, Ph.D. \\and William Kirkey, Ph.D. \\and Peter Kirkey, \\and Linda Navarro, \\and Ivan Santos-Chavez, \\and Carlos Reyes',
+  ('index', project+'.tex', 'Lower Rio Grande Valley Development Council Flood Infrastructure Fund',
+   authors, 
    'manual'),
-  ('requirements/index', 'Requirements.tex', u'RGVFlood User Inteface Requirements Determination',
-   u'Andrew N.S. Ernest, Ph.D., P.E., BCEE, D.WRE \\and Christopher B. Fuller, Ph.D. \\and William Kirkey, Ph.D. \\and Peter Kirkey, \\and Linda Navarro, \\and Ivan Santos-Chavez, \\and Carlos Reyes',
-   'manual'),
-  ('predevelopment/index', 'Predevelopment.tex', u'RGVFlood Pre-Development Plan',
-   u'Andrew N.S. Ernest, Ph.D., P.E., BCEE, D.WRE \\and Christopher B. Fuller, Ph.D. \\and William Kirkey, Ph.D. \\and Peter Kirkey, \\and Linda Navarro, \\and Ivan Santos-Chavez, \\and Carlos Reyes',
-   'manual'),
-  ('implementation/index', 'Implementation.tex', u'RGVFlood User Interface Implemention',
-   u'Andrew N.S. Ernest, Ph.D., P.E., BCEE, D.WRE \\and Christopher B. Fuller, Ph.D. \\and William Kirkey, Ph.D. \\and Peter Kirkey, \\and Linda Navarro, \\and Ivan Santos-Chavez, \\and Carlos Reyes',
-   'manual'),
-  ('model_requirements/t1requirements/index', 'T1Requirements.tex', u'Tier I Real-Time Model Requirements Determination',
-   u'Andrew N.S. Ernest, Ph.D., P.E., BCEE, D.WRE \\and Christopher B. Fuller, Ph.D. \\and William Kirkey, Ph.D. \\and Peter Kirkey, \\and Linda Navarro, \\and Ivan Santos-Chavez',
-   'manual'),   
-  ('model_requirements/t2requirements/index', 'T2Requirements.tex', u'Tier II Sub-Regional Model Requirements Determination',
-   u'Andrew N.S. Ernest, Ph.D., P.E., BCEE, D.WRE \\and Christopher B. Fuller, Ph.D. \\and William Kirkey, Ph.D. \\and Peter Kirkey, \\and Linda Navarro, \\and Ivan Santos-Chavez',
-   'manual'),      
-  ('model_requirements/t3requirements/index', 'T3Requirements.tex', u'Tier III Urban Model Requirements Determination',
-   u'Andrew N.S. Ernest, Ph.D., P.E., BCEE, D.WRE \\and Christopher B. Fuller, Ph.D. \\and William Kirkey, Ph.D. \\and Peter Kirkey, \\and Linda Navarro, \\and Ivan Santos-Chavez',
-   'manual'),         
-  ('geodatamodel/index', 'GeoDataModel.tex', u'Survey Data Model Manual',
-   u'Christopher B. Fuller, Ph.D., \\and Linda Navarro, \\and Andrew N.S. Ernest, Ph.D., P.E., BCEE, D.WRE \\and William Kirkey, Ph.D. \\and Peter Kirkey, \\and Ivan Santos-Chavez',
-   'manual'),   
-  ('implementation/survey_manual/index', 'SurveyManual.tex', u'Survey Manual',
-   u'Christopher B. Fuller, Ph.D., \\and Linda Navarro, \\and Andrew N.S. Ernest, Ph.D., P.E., BCEE, D.WRE \\and William Kirkey, Ph.D. \\and Peter Kirkey, \\and Ivan Santos-Chavez',
-   'manual'),  
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -245,7 +263,7 @@ latex_logo = "RATESLogo.png"
 #latex_show_urls = False
 
 # Documents to append as an appendix to all manuals.
-latex_appendices = ['glossary']
+latex_appendices = ['glossary', 'bibliography']
 
 # If false, no module index is generated.
 #latex_domain_indices = True

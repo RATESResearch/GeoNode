@@ -1,2 +1,1 @@
-invoke
--r docs/requirements.txt
+-r StandardsPractices/requirements.txt

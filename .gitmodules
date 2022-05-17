@@ -28,3 +28,9 @@
 [submodule "docs/RegionalHandH/DataCollection/DataDictionary/GeoDataModel"]
 	path = docs/RegionalHandH/DataCollection/DataDictionary/GeoDataModel
 	url = git@github.com:RATESResearch/GeoDataModel
+[submodule "StandardsPractices"]
+	path = StandardsPractices
+	url = git@github.com:RATESResearch/StandardsPractices
+[submodule "docs/RGVFloodCIDeployment"]
+	path = docs/RGVFloodCIDeployment
+	url = git@github.com:RATESResearch/RGVFloodCIDeployment
