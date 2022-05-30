@@ -34,3 +34,9 @@
 [submodule "docs/Cyberinfrastructure/UIEnhancements/RGVFloodCIDeployment"]
 	path = docs/Cyberinfrastructure/UIEnhancements/RGVFloodCIDeployment
 	url = git@github.com:RATESResearch/RGVFloodCIDeployment
+[submodule "docs/Cyberinfrastructure/CIDatabaseEnhancements/--recurse-submodules"]
+	path = docs/Cyberinfrastructure/CIDatabaseEnhancements/--recurse-submodules
+	url = git@github.com:RATESResearch/REONapi
+[submodule "docs/Cyberinfrastructure/CIDatabaseEnhancements/REONapi"]
+	path = docs/Cyberinfrastructure/CIDatabaseEnhancements/REONapi
+	url = git@github.com:RATESResearch/REONapi
