@@ -28,9 +28,6 @@
 [submodule "docs/RegionalHandH/DataCollection/DataDictionary/GeoDataModel"]
 	path = docs/RegionalHandH/DataCollection/DataDictionary/GeoDataModel
 	url = git@github.com:RATESResearch/GeoDataModel
-[submodule "StandardsPractices"]
-	path = StandardsPractices
-	url = git@github.com:RATESResearch/StandardsPractices
 [submodule "docs/Cyberinfrastructure/UIEnhancements/RGVFloodCIDeployment"]
 	path = docs/Cyberinfrastructure/UIEnhancements/RGVFloodCIDeployment
 	url = git@github.com:RATESResearch/RGVFloodCIDeployment
@@ -40,3 +37,6 @@
 [submodule "docs/Cyberinfrastructure/CIDatabaseEnhancements/REONapi"]
 	path = docs/Cyberinfrastructure/CIDatabaseEnhancements/REONapi
 	url = git@github.com:RATESResearch/REONapi
+[submodule "StandardsPractices"]
+	path = StandardsPractices
+	url = git@github.com:RATESResearch/StandardsPractices
