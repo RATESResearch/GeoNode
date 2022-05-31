@@ -1,8 +1,8 @@
-Survey Data Model Manual
+Hydrological Asset Data Model Manual
 ===========================
-The purpose of this Survey Data Model Manual is to provide guidance preparing digital survey databases to be delievered to RATES partners.  This is not intended to specify the process used, but to present standards and requirements of outpusts and deliverables.
+The purpose of this Hydrological Asset Data Model Manual is to provide guidance preparing digital Hydrological Asset databases to be delievered to RATES partners.  This is not intended to specify the process used, but to present standards and requirements of outpusts and deliverables.
 
-The Survey Manual will provide specific details of data collection methods to meet RATES partner and industry standard deliverables. 
+The Hydrological Asset Data Model Manuall will provide specific details of data collection methods to meet RATES partner and industry standard deliverables. 
 
 
 **Documentation Version**
@@ -47,13 +47,23 @@ This document versions are maintained an authorized as follows:
 
    .. toctree::
       :hidden:
-
-      introduction/index.rst
-      goals/index.rst
-      survdata/index.rst
-      gismodel/index.rst
-      drawings/index.rst
-      .. reporting/index.rst
-      glossary/index.rst
-
+ 
+     Introduction/index.rst
+     Goals/index.rst
+     Flow Rates/index.rst
+     1D Levels/index.rst
+      .. Level 1.0
+      .. Level 1.1
+      .. Level 1.2
+      .. Level 1.3
+      .. Level 1.4
+     2D Levels/index.rst
+      .. Level 2.0
+      .. Level 2.1
+      .. Level 2.2
+      .. Level 2.3
+      .. Level 2.4
+     Combined 1D/2D/index.rst
+     Reporting/index.rst
+     glossary/index.rst
 
