@@ -1,0 +1,9 @@
+invoke
+# invocations
+sphinx
+sphinx_rtd_theme
+sphinxcontrib.bibtex
+hieroglyph
+sphinxcontrib.plantuml
+python-dotenv
+decorator
