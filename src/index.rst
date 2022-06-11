@@ -16,11 +16,11 @@ RGVFlood
 
        introduction/index.rst
        glossary.rst
+       bibliography.rst
     ..   1.2 Regional Hydrology and Hydraulics <RegionalHandH/index.rst>
     ..   1.3 Real Time Hydrologic Systems <RTHS/index.rst>
     ..   1.4 Cyberinfrastructure <Cyberinfrastructure/index.rst>
     ..   implementation/survey_manual/index.rst
-    ..   bibliography.rst
     ..   Requirements Validation
     ..   Quality Assurance Demonstration
     ..   Deployment
@@ -44,8 +44,8 @@ RGVFlood
        :hidden:
 
        introduction/index.rst
-       predevelopment/index.rst
-       implementation/index
+    ..   predevelopment/index.rst
+    ..   implementation/index
     ..   glossary.rst
     ..   Requirements Validation
     ..   Quality Assurance Demonstration

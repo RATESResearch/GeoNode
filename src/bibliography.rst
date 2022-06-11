@@ -1,0 +1,1 @@
+../StandardsPractices/docs/bibliography.rst
