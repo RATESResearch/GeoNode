@@ -1,0 +1,1 @@
+../StandardsPractices/docs/glossary.rst
