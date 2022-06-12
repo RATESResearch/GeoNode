@@ -9,9 +9,11 @@
 
 import os
 import sys
-from dotenv import load_dotenv 
+import configparser
 
-load_dotenv() 
+config = configparser.ConfigParser()
+config.sections()
+config.read('../config.ini')
 
 #on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 on_rtd = True
@@ -27,16 +29,16 @@ on_rtd = True
 
 # -- Project information -----------------------------------------------------
 
-project = os.environ.get('PROJECT_NAME', 'RGVFlood')
+project = config['SPHINX']['PROJECT_NAME']
 
-copyright = os.environ.get('COPYRIGHT_YEAR', '2022') \
+copyright = config['SPHINX']['COPYRIGHT_YEAR'] \
     + ', ' \
-    + os.environ.get('ORGANIZATION', 'Research, Applied Technology, Education & Service, Inc.')
+    + config['SPHINX']['ORGANIZATION']
 
-author = os.environ.get('AUTHOR', 'Andrew N.S. Ernest, Ph.D., P.E., BCEE, D.WRE')
+author = config['SPHINX']['AUTHOR']
 
 # The full version, including alpha/beta/rc tags
-release = os.environ.get('VERSION','0.0.1')
+release = config['SPHINX']['VERSION']
 
 
 # -- General configuration ---------------------------------------------------
@@ -123,7 +125,7 @@ else:
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-html_title = os.environ.get('PROJECT_TITLE', 'RATES, Inc., RGVFlood Documentation')
+html_title = config['SPHINX']['PROJECT_TITLE']
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 html_short_title = project
@@ -196,7 +198,6 @@ pdf_documents = [('index', u'rst2pdf', u'Sample rst2pdf doc', u'Your Name'),]
 # --------------------------------------------------
 
 latex_elements = {
-'extraclassoptions': 'openany,oneside',
 # The paper size ('letterpaper' or 'a4paper').
 #'papersize': 'letterpaper',
 
@@ -207,7 +208,8 @@ latex_elements = {
 'preamble': '\\usepackage{svg}',
 
 'releasename': html_title+'\par Project Deliverable ID',
-
+'extraclassoptions': 'openany,oneside',
+'babel': '\\usepackage[polish]{babel}',
 'maketitle': r''' 
 \sphinxmaketitle
 
@@ -231,7 +233,7 @@ latex_elements = {
 
     {\LARGE\sffamily \textbf{Approval Page}}
     
-    \signature{Technical Review By}{Christopher B. Fuller, Ph.D.}{Chief of Operations}
+    \signature{Technical Review By}{William Kirkey, Ph.D.}{Chief of Research and Technology Development}
     
     \signature{Final Approval For Submission}{Andrew N.S. Ernest, Ph.D., P.E., BCEE, D.WRE}{Chief Executive Officer}
         
@@ -240,7 +242,7 @@ latex_elements = {
 ''',
 }
 
-authors = author + ' ' + os.environ.get('OTHER_AUTHORS', '')
+authors = author + ' ' + config['SPHINX']['OTHER_AUTHORS']
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
