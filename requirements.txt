@@ -1,1 +1,10 @@
--r StandardsPractices/requirements.txt
+invoke
+# invocations
+# sphinx==2.2
+sphinx
+Jinja2<3.1
+sphinx_rtd_theme
+sphinxcontrib.bibtex
+hieroglyph
+sphinxcontrib.plantuml
+python-dotenv
