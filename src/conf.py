@@ -196,6 +196,7 @@ pdf_documents = [('index', u'rst2pdf', u'Sample rst2pdf doc', u'Your Name'),]
 # --------------------------------------------------
 
 latex_elements = {
+'extraclassoptions': 'openany,oneside',
 # The paper size ('letterpaper' or 'a4paper').
 #'papersize': 'letterpaper',
 
