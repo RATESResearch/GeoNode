@@ -17,8 +17,10 @@ help:
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 
-conf: wget https://raw.githubusercontent.com/RATESResearch/RGVFlood/main/src/conf.py -o src/conf.py
-venv:
+conf: 
+  wget https://raw.githubusercontent.com/RATESResearch/RGVFlood/main/src/conf.py -O src/conf.py
+  wget https://raw.githubusercontent.com/RATESResearch/RGVFlood/main/requirements.txt -O requirements.txt
+  wget https://raw.githubusercontent.com/RATESResearch/RGVFlood/main/config.ini -O config.ini
 	virtualenv -p /usr/bin/python3 .venv; . .venv/bin/activate; pip install -r requirements.txt
 
 fire:
