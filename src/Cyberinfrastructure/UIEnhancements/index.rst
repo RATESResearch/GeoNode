@@ -13,4 +13,4 @@ Enhancements to the current REON.cc web interface to incorporate decision suppor
        1.4.1.4 User Interface Implementation <UIImplementation/docs/index.rst>
        1.4.1.5 User interface Quality Assurance Demonstration
        1.4.1.6 User Interface End-User Acceptance Testing
-       1.4.1.7 RGVFlood Deployment <RGVFloodCIDeployment/docs/index.rst>
+       1.4.1.7 RGVFlood Deployment <https://docs.cloudcideployment.rgvflood.com>
