@@ -10,43 +10,11 @@
 import os
 import sys
 import configparser
-import requests
 
 config = configparser.ConfigParser()
 config.sections()
 config.read('../config.ini')
 
-def download_file(filename, url):
-    """
-    Download an URL to a file
-    """
-    with open(filename, 'wb') as fout:
-        response = requests.get(url, stream=True)
-        response.raise_for_status()
-        # Write response data to file
-        for block in response.iter_content(4096):
-            fout.write(block)
-
-def download_if_not_exists(filename, url):
-    """
-    Download a URL to a file if the file
-    does not exist already.
-
-    Returns
-    -------
-    True if the file was downloaded,
-    False if it already existed
-    """
-    if not os.path.exists(filename):
-        download_file(filename, url)
-        return True
-    return False
-
-os.makedirs('assets', exist_ok = True) 
-download_file('assets/RATESLogo.png', 'https://raw.githubusercontent.com/RATESResearch/RGVFlood/main/src/assets/RATESLogo.png')
-download_file('assets/glossary.rst', 'https://raw.githubusercontent.com/RATESResearch/RGVFlood/main/src/assets/glossary.rst')
-download_file('assets/bibliography.rst', 'https://raw.githubusercontent.com/RATESResearch/RGVFlood/main/src/assets/bibliography.rst')
-download_file('assets/references.bib', 'https://raw.githubusercontent.com/RATESResearch/RGVFlood/main/src/assets/references.bib')
 #on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 on_rtd = True
 
@@ -164,7 +132,7 @@ html_short_title = project
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-html_logo = "assets/RATESLogo.png"
+#html_logo = None
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
@@ -174,7 +142,7 @@ html_logo = "assets/RATESLogo.png"
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['assets']
+html_static_path = ['_static']
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
@@ -241,7 +209,7 @@ latex_elements = {
 
 'releasename': html_title+'\par Project Deliverable ID',
 'extraclassoptions': 'openany,oneside',
-'babel': '\\usepackage[american]{babel}',
+'babel': '\\usepackage[polish]{babel}',
 'maketitle': r''' 
 \sphinxmaketitle
 
@@ -285,9 +253,7 @@ latex_documents = [
 
 # The name of an image file (relative to this directory) to place at the top of
 # the title page.
-
-# latex_logo = https://raw.githubusercontent.com/RATESResearch/RGVFlood/main/assets/RATESLogo.png
-latex_logo = 'assets/RATESLogo.png'
+latex_logo = "RATESLogo.png"
 
 # For "manual" documents, if this is true, then toplevel headings are parts,
 # not chapters.
@@ -300,7 +266,7 @@ latex_logo = 'assets/RATESLogo.png'
 #latex_show_urls = False
 
 # Documents to append as an appendix to all manuals.
-latex_appendices = ['assets/glossary', 'assets/bibliography']
+latex_appendices = ['glossary', 'bibliography']
 
 # If false, no module index is generated.
 #latex_domain_indices = True

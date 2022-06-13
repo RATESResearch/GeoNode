@@ -37,6 +37,3 @@
 [submodule "docs/Cyberinfrastructure/CIDatabaseEnhancements/REONapi"]
 	path = docs/Cyberinfrastructure/CIDatabaseEnhancements/REONapi
 	url = git@github.com:RATESResearch/REONapi
-[submodule "StandardsPractices"]
-	path = StandardsPractices
-	url = git@github.com:RATESResearch/StandardsPractices
