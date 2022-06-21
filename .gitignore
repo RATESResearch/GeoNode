@@ -128,3 +128,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Additions by Spyce
+.spyce
+# Additions by Spyce

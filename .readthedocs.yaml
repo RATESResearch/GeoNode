@@ -12,6 +12,8 @@ submodules:
 # Set the version of Python and other tools you might need
 build:
   os: ubuntu-20.04
+  apt_packages:
+   - plantuml
   tools:
     python: "3.9"
     # You can also specify other tool versions:
@@ -30,4 +32,5 @@ formats:
 # Optionally declare the Python requirements required to build your docs
 python:
    install:
+   - path: .
    - requirements: requirements.txt

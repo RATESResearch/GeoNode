@@ -1,0 +1,28 @@
+[build-system]
+  requires = ["setuptools>=45", "wheel", "setuptools_scm>=6.2"]
+  build-backend = "setuptools.build_meta"
+[project]
+  name = "RGVFlood"
+  description = "Lower Rio Grande Valley Flood Infrastructure Fund"
+  readme = "README.rst"
+  classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
+  ]
+  dynamic = ["version"]
+  dependencies = [
+    "setuptools-scm",
+    ]
+  # author = "Andrew Ernest"
+  # author_email = "anernest@ratesresearch.org"
+  # long_description = "file: README.rst"
+  # long_description_content_type = "text/markdown"
+  # url = "https://github.com/RATESResearch/RGVFlood"
+  # project_urls = Bug Tracker = "https://github.com/RATESResearch/RGVFlood/issues"
+[tool.setuptools.packages.find]
+  where = ["src"]  
+[tool.setuptools_scm]
+  write_to = "src/_version.py"
+  root = '.'
+  relative_to='setup.py'

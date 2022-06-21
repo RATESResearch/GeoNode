@@ -11,6 +11,11 @@ import os
 import sys
 import configparser
 import requests
+# Pulling version from config.ini for now, repurposed as deliverable id
+# from importlib.metadata import version
+# release = version('spyce')
+# for example take major/minor
+# version = '.'.join(release.split('.')[:2])
 
 config = configparser.ConfigParser()
 config.sections()
@@ -43,10 +48,13 @@ def download_if_not_exists(filename, url):
     return False
 
 os.makedirs('assets', exist_ok = True) 
+os.makedirs('_templates', exist_ok = True) 
 download_file('assets/RATESLogo.png', 'https://raw.githubusercontent.com/RATESResearch/RGVFlood/main/src/assets/RATESLogo.png')
-download_file('assets/glossary.rst', 'https://raw.githubusercontent.com/RATESResearch/RGVFlood/main/src/assets/glossary.rst')
-download_file('assets/bibliography.rst', 'https://raw.githubusercontent.com/RATESResearch/RGVFlood/main/src/assets/bibliography.rst')
-download_file('assets/references.bib', 'https://raw.githubusercontent.com/RATESResearch/RGVFlood/main/src/assets/references.bib')
+download_file('assets/RGVFloodLogo.png', 'https://raw.githubusercontent.com/RATESResearch/RGVFlood/main/src/assets/RGVFloodLogo.png')
+download_file('_templates/layout.html', 'https://raw.githubusercontent.com/RATESResearch/RGVFlood/main/src/_templates/layout.html')
+download_file('glossary.rst', 'https://raw.githubusercontent.com/RATESResearch/glossary/main/glossary.rst')
+download_file('bibliography.rst', 'https://raw.githubusercontent.com/RATESResearch/bibliography/main/bibliography.rst')
+download_file('assets/references.bib', 'https://raw.githubusercontent.com/RATESResearch/bibliography/main/references.bib')
 #on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 on_rtd = True
 
@@ -56,7 +64,7 @@ on_rtd = True
 #
 # import os
 # import sys
-# sys.path.insert(0, os.path.abspath('.'))
+sys.path.insert(0, os.path.abspath('..'))
 
 
 # -- Project information -----------------------------------------------------
@@ -86,10 +94,12 @@ extensions = [
 'hieroglyph',
 'sphinx.ext.todo',
 'sphinxcontrib.plantuml',
+# 'invocations.autodoc',
 ]
 
-bibtex_bibfiles = ['references.bib']
-plantuml = 'java -jar /usr/share/plantuml/plantuml.jar'
+bibtex_bibfiles = ['assets/references.bib']
+# plantuml = 'java -jar /usr/share/plantuml/plantuml.jar'
+plantuml = "plantuml"
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -164,7 +174,8 @@ html_short_title = project
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-html_logo = "assets/RATESLogo.png"
+html_logo = "assets/RGVFloodLogo.png"
+html_baseurl = "https://docs.rgvflood.com"
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
@@ -300,7 +311,7 @@ latex_logo = 'assets/RATESLogo.png'
 #latex_show_urls = False
 
 # Documents to append as an appendix to all manuals.
-latex_appendices = ['assets/glossary', 'assets/bibliography']
+latex_appendices = ['glossary', 'bibliography']
 
 # If false, no module index is generated.
 #latex_domain_indices = True
