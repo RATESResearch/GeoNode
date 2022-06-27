@@ -15,6 +15,5 @@ Level 0
 
  * - Step 
    - Action
-   
-  * - 1
+ * - 1
    - Download Elevation DEM
