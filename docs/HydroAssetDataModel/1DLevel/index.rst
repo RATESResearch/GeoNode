@@ -11,5 +11,14 @@ Levels concept is to provide the best HEC-RAS model with the existing to collect
 Level 0
 =======
  
- Step
+
   # Download existing Elevation data
+.. list-table:: Survey Codes
+  :widths: 25 25 50
+  :header-rows: 1
+   :widths: 25 25 50
+   :header-rows: 1
+
+ * - Code: 
+   - Description	
+   
