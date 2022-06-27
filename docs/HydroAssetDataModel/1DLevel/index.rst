@@ -11,7 +11,10 @@ Levels concept is to provide the best HEC-RAS model with the existing to collect
 Level 0
 =======
 
-.. list-table:: Survey Codes 
+.. list-table:: Workflow
 
- * - Code: 
-   - Description
+ * - Step 
+   - Action
+   
+  * - 1
+   - Download Elevation DEM
