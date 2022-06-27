@@ -12,7 +12,6 @@ Level 0
 =======
 
 .. list-table:: Survey Codes 
-  :widths: 25 25 50 
-  :header-rows: 1 
+
  * - Code: 
    - Description
