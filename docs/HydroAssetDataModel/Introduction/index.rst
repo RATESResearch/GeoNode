@@ -13,7 +13,7 @@ Hydrological Asset Data Model includes the files to make a HEC-RAS 1D and 2D ana
  * RAS Mapper file (*.rasmapper)
  
  
- Geometry files contain all the geometric data or Hydro Assets such as:
+Geometry files contain all the geometric data or Hydro Assets such as:
  * Cross section information; 
  * Hydraulic Structures; Bridges, Wiers, Culverts
  
