@@ -16,9 +16,14 @@ Hydrological Asset Data Model includes the files to make a HEC-RAS 1D and 2D ana
 Geometry files contain all the geometric data or Hydro Assets such as:
  * Cross section information; 
  * Hydraulic Structures; Bridges, Wiers, Culverts
+ * Catchment delineations
+ * Flow paths
+ * Cross section and long section profile alignments
+ * Roadway or levee centreline alignments
+ * Building footprints
+ * Structures
  
- Users shall create proper data engineered file structuire to store imported and created files such as
- 
+Users shall create proper data engineered file structuire to store imported and created files such as
  * Aerial photos
  * Hydrology
  * Land use
@@ -27,12 +32,7 @@ Geometry files contain all the geometric data or Hydro Assets such as:
  * Terrain
  * Shape files
  * DWG_DXF
-  * Catchment delineations
-  * Flow paths
-  * Cross section and long section profile alignments
-  * Roadway or levee centreline alignments
-  * Building footprints
-  * Structures
+
 
 Elevations
 =====
