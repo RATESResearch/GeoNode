@@ -1,5 +1,8 @@
 2DLevel
 ======
+2D-capable flood models like HEC-RAS 5.0 rely less on static modeling assumptions like pre-defined flow directions, which can
+reduce model-building iterations and free up more time for model calibration, quality control and sensitivity analysis. Faster computing
+times, widely-available digital elevation data, and a growing pool of knowledgeable 2D modelers are making these solutions more costeffective every year. In fact, for some applications a 2D solution will produce better results in less time compared to a “simpler” 1D model.
 
 HEC-RAS can perform 1D, 2D only, or combined 1D and 2D modeling
  * Detailed 1D modeling
@@ -9,7 +12,7 @@ HEC-RAS can perform 1D, 2D only, or combined 1D and 2D modeling
  * 1D channels between 2D areas
  * Simplified to detailed levee and dam breach
 
-2D uses complicated terrains of grid cells
+2D uses complicated terrains of grid cells in a mesh
  * RAS Mapper reduces it into a grid with terrain data embedded
  * The grid cells are polygon shaped (3 to 8 sides) prisms with an irregular bottom
  * The volume of the prism is a function of water surface elevation
@@ -25,10 +28,41 @@ HEC-RAS can perform 1D, 2D only, or combined 1D and 2D modeling
  
 2D Hydro Assets 
 =====
+Reaches with significant and complex in-channel structures or Hydro Assets (weirs, culverts, and especially bridges - pressure flow is not handled in 2D) need to be done in HEC-RAS 1D
 
-Hydro Assets in 2D need to be entered as Break Lines.
+Terrain Hydro Assets in 2D need to be entered as Break Lines.
 Needed for linear features such as levees, roads, steep banks, high ground barriers, etc
- * Improves terrain model
- * Forces the grid cell boundaries (grid face) to match the high point
- * Hydraulics is defined at the grid face
- * Break lines tell HECRAS that the water can not cross without exceeding an elevation
+* Improves terrain model
+* Forces the grid cell boundaries (grid face) to match the high point
+* Hydraulics is defined at the grid face
+* Break lines tell HECRAS that the water can not cross without exceeding an elevation
+
+Workflow
+=====
+The following is a workflow to import terrains, set break lines, and boundaries
+
+.. list-table:: Workflow
+
+ * - Step 
+   - Action
+ * - 1
+   - Download Elevation DEM into Level 0-4
+ * - 2
+   - Open HEC-RAS
+ * - 3
+   - Open RAS Mapper
+ * - 4
+   - Right Click on Map Lawers and Add WEB Imagery Layers
+ * - 5
+   - Select Tools New Terrain  Make Hill Shade and Contours; Close RAS Mapper
+ * - 6
+   - Open Geometric Dayta Schematic
+ * - 7
+   -  Make Grid Mesh Model
+ * - 8
+   -  Make Breaklines using 2DFlow Editor
+  * - 9
+   -  Set Boundary Conditions
+  * - 10
+   -  Run the Models with Unsteady Flow Analysis
+
