@@ -48,10 +48,6 @@ The following is a workflow to import terrains, set break lines, and boundaries
  * - 1
    - Download Elevation DEM into Level 0-4
  * - 2
-   - Create Cross Sections
- * - 1
-   - Download Elevation DEM into Level 0-4
- * - 2
    - Open HEC-RAS
  * - 3
    - Open RAS Mapper
