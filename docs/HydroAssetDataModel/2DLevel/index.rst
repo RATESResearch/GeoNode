@@ -42,7 +42,6 @@ Workflow
 The following is a workflow to import terrains, set break lines, and boundaries
 
 .. list-table:: Workflow
-
  * - Step 
    - Action
  * - 1
@@ -61,8 +60,8 @@ The following is a workflow to import terrains, set break lines, and boundaries
    -  Make Grid Mesh Model
  * - 8
    -  Make Breaklines using 2DFlow Editor
-  * - 9
+ * - 9
    -  Set Boundary Conditions
-  * - 10
+ * - 10
    -  Run the Models with Unsteady Flow Analysis
 
