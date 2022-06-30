@@ -42,6 +42,15 @@ Workflow
 The following is a workflow to import terrains, set break lines, and boundaries
 
 .. list-table:: Workflow
+
+ * - Step 
+   - Action
+ * - 1
+   - Download Elevation DEM into Level 0-4
+ * - 2
+   - Create Cross Sections
+   
+.. list-table:: Workflow
  * - Step 
    - Action
  * - 1
