@@ -25,9 +25,23 @@ Hydrological Asset Data Model includes the files to make a HEC-RAS 1D and 2D ana
   * Catchment delineations
   * Flow paths
   * Cross section and long section profile alignments
-  * oadway or levee centreline alignments
+  * Roadway or levee centreline alignments
   * Building footprints
   * Structures
+
+Elevations
+=====
+HECRAS uses a GeoTiff file format
+ * Terrain needs to capture overbank and main river channel
+ * LiDAR for overbank and shallow water
+ * SONAR for deep water
+ * TINS are used because they can be irregular. Lots of points in the channel and fewer in flat overbank
+ * Good to have imagery with the elevation data to get a complete picture
+ * Verify and proof data
+ *  Imperfections in LiDAR data translate to model errors
+ * Examine structures that cross rivers.
+ * Screen vegetation
+ * Over water returns need to be replaced with bathometric data
 
 This document is not intended to replace the HEC-RAS documentation at the US Army Corps of Engineers at https://www.hec.usace.army.mil/software/hec-ras/documentation.aspx
 
