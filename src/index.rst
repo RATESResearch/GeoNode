@@ -14,7 +14,8 @@ RGVFlood
        :maxdepth: 2
        :caption: Contents:
 
-       introduction/index.rst
+       introduction/index
+       development/index
        1.2 Regional Hydrology and Hydraulics <RegionalHandH/index.rst>
        1.4 Cyberinfrastructure <Cyberinfrastructure/index.rst>
        glossary.rst
