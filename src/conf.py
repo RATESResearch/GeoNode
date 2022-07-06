@@ -94,6 +94,7 @@ extensions = [
 'hieroglyph',
 'sphinx.ext.todo',
 'sphinxcontrib.plantuml',
+'sphinxcontrib.mermaid',
 # 'invocations.autodoc',
 ]
 
