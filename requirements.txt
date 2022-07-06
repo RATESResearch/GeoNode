@@ -8,18 +8,5 @@ sphinxcontrib.bibtex
 hieroglyph
 sphinxcontrib.plantuml
 python-dotenv
-
-# Additions by Spyce
+sphinxcontrib-mermaid
 git+https://github.com/RATESResearch/Spyce
-
-# Additions by Spyce
-
-# Additions by Spyce
-
-# Additions by Spyce
-
-# Additions by Spyce
-
-# Additions by Spyce
-
-# Additions by Spyce
