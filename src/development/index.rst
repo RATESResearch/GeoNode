@@ -10,9 +10,9 @@ RGVFlood Development Process
 
     section Regional Hydrology and Hydraulics
     Data Collection & Assimilation  :active, dca, 2021-06-10, 2024-12-31
-    Regional Modeling               :active, des2, 2022-01-09, 3d
-    Sub-Regional Modeling           :active,         des3, after des2, 5d
-    Urban Modeling                  :         des4, after des3, 5d
+    Regional Modeling               :active, rm, 2022-01-09, 3d
+    Sub-Regional Modeling           :active, srm, after rm, 5d
+    Urban Modeling                  :um, after srm, 5d
 
 .. 
     gantt
