@@ -5,7 +5,7 @@ RGVFlood Development Process
 
     gantt
     dateFormat  YYYY-MM-DD
-    title Adding GANTT diagram to mermaid
+    title RGVFlood Development Plan
     excludes weekdays 2014-01-10
 
     section A section
@@ -14,22 +14,10 @@ RGVFlood Development Process
     Future task               :         des3, after des2, 5d
     Future task2               :         des4, after des3, 5d
 
-..
-   sequenceDiagram
-      participant Alice
-      participant Bob
-      Alice->John: Hello John, how are you?
-      loop Healthcheck
-          John->John: Fight against hypochondria
-      end
-      Note right of John: Rational thoughts <br/>prevail...
-      John-->Alice: Great!
-      John->Bob: How about you?
-      Bob-->John: Jolly good!
 .. 
     gantt
         dateFormat  YYYY-MM-DD
-        title RGVFlood Development Plan
+        title 
         excludes weekends
 
         section Regional Hydrology and Hydraulics
