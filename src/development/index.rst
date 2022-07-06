@@ -6,7 +6,7 @@ RGVFlood Development Process
     gantt
     dateFormat  YY-Q
     title RGVFlood Development Plan
-    excludes weekdays 2014-01-10
+    excludes weekends
 
     section Regional Hydrology and Hydraulics
     Data Collection & Assimilation  :active, dca, 2021-06-10, 2024-12-31
