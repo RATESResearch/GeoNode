@@ -9,10 +9,10 @@ RGVFlood Development Process
     excludes weekdays 2014-01-10
 
     section Regional Hydrology and Hydraulics
-    Completed task            :done,    des1, 2014-01-06,2014-01-08
-    Active task               :active,  des2, 2014-01-09, 3d
-    Future task               :         des3, after des2, 5d
-    Future task2               :         des4, after des3, 5d
+    Data Collection & Assimilation  :active,    des1, 2014-01-06,2014-01-08
+    Regional Modeling               :active,  des2, 2014-01-09, 3d
+    Sub-Regional Modeling           :active,         des3, after des2, 5d
+    Urban Modeling                  :         des4, after des3, 5d
 
 .. 
     gantt
