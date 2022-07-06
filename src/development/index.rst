@@ -4,7 +4,7 @@ RGVFlood Development Process
 .. mermaid:: 
 
     gantt
-    dateFormat  YYYY-MM-DD
+    dateFormat  YY-Q
     title RGVFlood Development Plan
     excludes weekdays 2014-01-10
 
