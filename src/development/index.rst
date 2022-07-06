@@ -1,13 +1,14 @@
 RGVFlood Development Process
 ============================
 
-gantt
-dateFormat  YYYY-MM-DD
-title RGVFlood Development Plan
-excludes weekends
+.. mermaid:: 
+    gantt
+    dateFormat  YYYY-MM-DD
+    title RGVFlood Development Plan
+    excludes weekends
 
-section Regional Hydrology and Hydraulics
+    section Regional Hydrology and Hydraulics
 
-section Real Time Hydrologic Systems Network
+    section Real Time Hydrologic Systems Network
 
-section Cyberinfrastructure
+    section Cyberinfrastructure
