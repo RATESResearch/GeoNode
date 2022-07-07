@@ -1,3 +1,5 @@
+.. mermaid:: rgvflood.mmd
+
 .. mermaid:: datacollection.mmd
 
 .. mermaid:: regional_modeling.mmd
