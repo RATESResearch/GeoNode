@@ -2,6 +2,9 @@
 RGVFlood
 ========
 
+.. revealjs-slide::
+    Welcome to RGVFlood
+
 .. ifnotslides::
 
     Please respond to a quick RGVFlood Survey_.

@@ -87,15 +87,13 @@ release = config['SPHINX']['VERSION']
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-#'myst_parser',
-#'sphinxcontrib.plantuml',
 'sphinxcontrib.bibtex',
 'sphinx.ext.autodoc',
 'hieroglyph',
 'sphinx.ext.todo',
 'sphinxcontrib.plantuml',
 'sphinxcontrib.mermaid',
-# 'invocations.autodoc',
+'sphinx_revealjs',
 ]
 
 bibtex_bibfiles = ['assets/references.bib']
