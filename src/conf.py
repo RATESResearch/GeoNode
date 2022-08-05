@@ -7,19 +7,46 @@
 # -- Path setup --------------------------------------------------------------
 # serve to show the default.
 
-import os
 import sys
-import configparser
 import requests
-# Pulling version from config.ini for now, repurposed as deliverable id
-# from importlib.metadata import version
-# release = version('spyce')
-# for example take major/minor
-# version = '.'.join(release.split('.')[:2])
+import toml
+from os import makedirs, environ
+from os.path import exists, abspath, join
+from dotenv import load_dotenv
 
-config = configparser.ConfigParser()
-config.sections()
-config.read('../config.ini')
+def download_files():
+    """ Dowload the files listed in the config
+    """
+    global config
+    load_dotenv()
+    config = toml.load('../spyce.toml')
+    makedirs('downloads', exist_ok = True) 
+    for filename, url in config['SPHINX']['downloads'].items():
+        # print(filename, url)
+        with open(join("downloads", filename), 'wb') as fout:
+            response = requests.get(url, stream=True)
+            response.raise_for_status()
+            # Write response data to file
+            for block in response.iter_content(4096):
+                fout.write(block)
+
+def load_settings():
+    """ Load the config. The default config is in the spyce.toml file.
+    
+    Priority:
+
+    1. Environment Variables
+    #. .env file
+    #. spyce.toml file
+    """
+    global config
+    load_dotenv()
+    config = toml.load('../spyce.toml')
+    for key, value in config['SPHINX']['settings'].items():
+        # print(key, value)
+        if key in environ:
+            config['SPHINX']['settings'][key] = environ[key]
+        # print(key, config['SPHINX']['settings'][key])
 
 def download_file(filename, url):
     """
@@ -42,44 +69,32 @@ def download_if_not_exists(filename, url):
     True if the file was downloaded,
     False if it already existed
     """
-    if not os.path.exists(filename):
+    if not exists(filename):
         download_file(filename, url)
         return True
     return False
 
-os.makedirs('assets', exist_ok = True) 
-os.makedirs('_templates', exist_ok = True) 
-download_file('assets/RATESLogo.png', 'https://raw.githubusercontent.com/RATESResearch/RGVFlood/main/src/assets/RATESLogo.png')
-download_file('assets/RGVFloodLogo.png', 'https://raw.githubusercontent.com/RATESResearch/RGVFlood/main/src/assets/RGVFloodLogo.png')
-download_file('_templates/layout.html', 'https://raw.githubusercontent.com/RATESResearch/RGVFlood/main/src/_templates/layout.html')
-download_file('glossary.rst', 'https://raw.githubusercontent.com/RATESResearch/glossary/main/glossary.rst')
-download_file('bibliography.rst', 'https://raw.githubusercontent.com/RATESResearch/bibliography/main/bibliography.rst')
-download_file('assets/references.bib', 'https://raw.githubusercontent.com/RATESResearch/bibliography/main/references.bib')
-#on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
+download_files()
+
+#on_rtd = environ.get('READTHEDOCS', None) == 'True'
 on_rtd = True
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
-sys.path.insert(0, os.path.abspath('..'))
-
+sys.path.insert(0, abspath('..'))
 
 # -- Project information -----------------------------------------------------
+load_settings()
 
-project = config['SPHINX']['PROJECT_NAME']
-
-copyright = config['SPHINX']['COPYRIGHT_YEAR'] \
+project = config['SPHINX']['settings']['PROJECT_NAME']
+copyright = config['SPHINX']['settings']['COPYRIGHT_YEAR'] \
     + ', ' \
-    + config['SPHINX']['ORGANIZATION']
-
-author = config['SPHINX']['AUTHOR']
-
+    + config['SPHINX']['settings']['ORGANIZATION']
+author = config['SPHINX']['settings']['AUTHOR']
 # The full version, including alpha/beta/rc tags
-release = config['SPHINX']['VERSION']
-
+release = config['SPHINX']['settings']['VERSION']
 
 # -- General configuration ---------------------------------------------------
 
@@ -89,19 +104,23 @@ release = config['SPHINX']['VERSION']
 extensions = [
 'sphinxcontrib.bibtex',
 'sphinx.ext.autodoc',
-'hieroglyph',
 'sphinx.ext.todo',
 'sphinxcontrib.plantuml',
-'sphinxcontrib.mermaid',
-'sphinx_revealjs',
+'sphinx.ext.intersphinx',
+"sphinx_revealjs",
+'sphinxcontrib.programoutput',
 ]
 
-bibtex_bibfiles = ['assets/references.bib']
+# master_doc = 'slides'
+
+intersphinx_mapping = {'rgvflood': ('https://glossary.rgvflood.com/en/latest', None)}
+
+bibtex_bibfiles = ['downloads/references.bib']
 # plantuml = 'java -jar /usr/share/plantuml/plantuml.jar'
 plantuml = "plantuml"
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+templates_path = ['downloads']
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -114,12 +133,34 @@ pygments_style = 'sphinx'
 # A list of ignored prefixes for module index sorting.
 #modindex_common_prefix = []
 # Display todos by setting to True
-todo_include_todos = True
+todo_include_todos = False
 
 numfig = True
 #numfig_format['figure'] = 'Figure %s'
 numfig_format = {'figure': 'Figure: %s', 'table': 'Table: %s', 'code-block': 'Listing: %s', 'section': 'Section: %s'}
 
+# -- Options for Revealjs Slide output ---------------------------------------------------
+revealjs_script_conf = """
+    { 
+        hash: true,
+        width: 1600,
+        height: 900,
+    }
+"""
+
+revealjs_script_plugins = [
+    {
+        "src": "revealjs4/plugin/highlight/highlight.js",
+        "name": "RevealHighlight",
+    },
+    {
+        "src": "revealjs4/plugin/notes/notes.js",
+        "name": "RevealNotes",
+    },    
+]
+
+revealjs_static_path = ['_static']
+revealjs_style_theme = 'bluetunnel.css'
 # -- Options for HTML Slide output ---------------------------------------------------
 
 slide_theme = 'slides2'
@@ -166,14 +207,14 @@ else:
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-html_title = config['SPHINX']['PROJECT_TITLE']
+html_title = config['SPHINX']['settings']['PROJECT_TITLE']
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 html_short_title = project
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-html_logo = "assets/RGVFloodLogo.png"
+html_logo = "downloads/RGVFloodLogo.png"
 html_baseurl = "https://docs.rgvflood.com"
 
 # The name of an image file (within the static path) to use as favicon of the
@@ -184,7 +225,7 @@ html_baseurl = "https://docs.rgvflood.com"
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['assets']
+html_static_path = ['_static','downloads']
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
@@ -284,7 +325,7 @@ latex_elements = {
 ''',
 }
 
-authors = author + ' ' + config['SPHINX']['OTHER_AUTHORS']
+authors = author + ' ' + config['SPHINX']['settings']['OTHER_AUTHORS']
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
@@ -297,7 +338,7 @@ latex_documents = [
 # the title page.
 
 # latex_logo = https://raw.githubusercontent.com/RATESResearch/RGVFlood/main/assets/RATESLogo.png
-latex_logo = 'assets/RATESLogo.png'
+latex_logo = 'downloads/RATESLogo.png'
 
 # For "manual" documents, if this is true, then toplevel headings are parts,
 # not chapters.
@@ -310,7 +351,12 @@ latex_logo = 'assets/RATESLogo.png'
 #latex_show_urls = False
 
 # Documents to append as an appendix to all manuals.
-latex_appendices = ['glossary', 'bibliography']
+latex_appendices = ['glossary']
+# latex_appendices = ['downloads/glossary', 'downloads/bibliography']
 
 # If false, no module index is generated.
 #latex_domain_indices = True
+
+# if __name__ == "__main__":
+
+#     load_config()

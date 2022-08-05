@@ -1,5 +1,3 @@
-:orphan:
-
 Glossary
 ========
 
@@ -32,9 +30,6 @@ Glossary
 
    CI
       Cyberinfrastructure
-      
-   Clover
-      Cloud Virtual Water Model Executor
 
    COP
       Common Operating Picture
@@ -60,9 +55,6 @@ Glossary
    DFIRM 
       Digital Flood Insurance Rate Map
 
-   Django
-      <https://www.djangoproject.com/>
-      
    Docker
       Docker is a container deployment platform that allows for the rapid deployment of a applications in the cloud, independent of the physical infrastructure.
 
@@ -77,9 +69,6 @@ Glossary
 
    FEMA
       Federal Emergency Management Agency
-      
-   FOSS
-      Free and Open Source Software
 
    GCE 
       Google Compute Engine
@@ -92,9 +81,6 @@ Glossary
       
    GeoServer
       Open source server for sharing geospatial data.
-      
-   GeoTIFF
-      A public domain metadata standard which has the georeferencing information embedded within the :term:`TIFF` file.
 
    GeoNode/db
       :term:`PostgreSQL` with :term:`PostGIS` extensions database server storing :term:`GeoNode` :term:`Django` and :term:`GeoServer` data.   
@@ -114,21 +100,12 @@ Glossary
 
    HPCC
       :term:`HPC` cluster
-      
-   HTML
-      Hypertext Markup Language
-      
-   IT
-      Information Technology
 
    K8s
       :term:`Kubernetes`
 
    Kubernetes
       An orchestration system facilites the deployment and management of containerized applications, with a specific focus on scaling to increase demand for the provided services.
-      
-   LaTeX
-      A high-quality typesetting system including features designed for the production of technical and scientific documentation
 
    LiDAR
       Light Detection and Ranging
@@ -139,17 +116,14 @@ Glossary
    MPI
       Message Passing Interface
 
+   FEMA
+      Federal Emergency Management Agency
+
    NAT 
       Network Address Translation
 
-   NetCDF
-      *NetCDF (Network Common Data Form) is a set of software libraries and machine-independent data formats that support the creation, access, and sharing of array-oriented scientific data. It is also a community standard for sharing scientific data. The Unidata Program Center supports and maintains netCDF programming interfaces for C, C++, Java, and Fortran. Programming interfaces are also available for Python, IDL, MATLAB, R, Ruby, and Perl.* Reproduced from `NetCDF`_.
-
    NGINX
-      High performance web server. 
-
-   R 
-      A language and environment for statistical computing and graphics
+      High performance web server.
 
    REON/db
       :term:`PostgreSQL` with :term:`PostGIS` extensions database server storing :term:`REON` specific data for :term:`RTHS`, :term:`REON/WM` & :term:`REON.cc` data.
@@ -162,15 +136,6 @@ Glossary
 
    PostGIS       
       Spatial database extender for :term:`PostgreSQL`
-      
-   R
-      A language and environment for statistical computing and graphics. 
-      
-   Sphinx
-      Documentation generator supporting multiple output formats
-      
-   Spyce
-      Smartphone Python Computing Environment
 
    Tastypie
       a webservice :term:`API` framework for :term:`Django`
@@ -216,9 +181,6 @@ Glossary
 
    SA 
       Situational Awareness
-      
-   SONAR
-      Sound Navigation Ranging, a technique for detecting and determining the distance and direction of underwater objects by acoustic means.
 
    SaaS
       Software as a Service 
@@ -234,12 +196,6 @@ Glossary
 
    Tier III
       Tier III Off-Line Urban Stormwater Modeling Framework
-      
-   TIFF
-      Tag Image File Format, a computer file used to store raster graphics and image information.
-      
-   TIN
-      Triangular Irregular Networks are a form of vector-based digital geographic data and are constructed by triangulating a set of vertices.
 
    Ubuntu
       A :term:`Linux` distribution      
@@ -295,9 +251,6 @@ Glossary
    LSM
       Land Surface Models focus on describing the processes driving the exchange of terrestrial water with atmospheric.
 
-   NIC
-      Network interface controller
-
    NLDAS 
       North American Land Data Assimilation System
 
@@ -325,9 +278,6 @@ Glossary
    RBAC
       Role Based Access Control 
       
-   SMT 
-      Simultaneous Multi-Threading
-      
    TWDB 
       Texas Water Development Board
 
@@ -340,44 +290,32 @@ Glossary
    VIC 
       Variable Infiltration Capacity (VIC) Macroscale Hydrologic Model.  <https://vic.readthedocs.io/en/master/>
 
-   Eeyore
-      URL: Eeyore.ratesresearch.org CPU: Dual Intel(R) Xeon(R) E-2124 CPU @ 3.30GHz Memory: 16GB HD: 4TB OS: Ubuntu Linux 20.04
-
-   GeoNode
-      <https://geonode.org/>
-
-   HEC-DSS
-      :term:`HEC` Data Storage System
-
-   IDV 
-      Integrated Data Viewer from :term:`UniData`
-
-   InfoWorks ICM
-      <https://www.innovyze.com/en-us/products/infoworks-icm>
-
-   MIKE Urban+
-      <https://www.mikepoweredbydhi.com/download/mike-2019/mike-urban-plus?ref=%7B5399F5D6-40C6-4BB2-8311-37B615A652C6%7D>
-      
-   NCAR
-      National Center for Atmospheric Research
-
-   Python
-      <https://www.python.org/>
-
    SWMM 
       Stormwater Management Model
 
    SPRNT 
       Simulation Program for River Networks
 
+   Eeyore
+      URL: Eeyore.ratesresearch.org CPU: Dual Intel(R) Xeon(R) E-2124 CPU @ 3.30GHz Memory: 16GB HD: 4TB OS: Ubuntu Linux 20.04
+
    Tigger
       URL: Tigger.water-wizard.org CPU: Dual Intel(R) Xeon(R) CPU E3-1245 v3 @ 3.40GHz Memory: 16GB HD: 4TB OS: Ubuntu Linux 20.04
-      
-   UCAR
-      University Corporation for Atmospheric Research
-      
-   UniData
-      A :term:`UCAR` community program focused on sharing geoscience data and the tools to access and visualize that data.
+
+   GeoNode
+      <https://geonode.org/>
+
+   Django
+      <https://www.djangoproject.com/>
+
+   InfoWorks ICM
+      <https://www.innovyze.com/en-us/products/infoworks-icm>
+
+   MIKE Urban+
+      <https://www.mikepoweredbydhi.com/download/mike-2019/mike-urban-plus?ref=%7B5399F5D6-40C6-4BB2-8311-37B615A652C6%7D>
+
+   Python
+      <https://www.python.org/>
 
    USIBWC
       United States International Boundary Water Commission
@@ -401,10 +339,7 @@ Glossary
       Weather Research and Forecasting Model
 
    WRF-Hydro 
-      :term:`WRF` Hydrological modeling system.   <https://ral.
-      .edu/projects/wrf_hydro/overview>
+      :term:`WRF` Hydrological modeling system.   <https://ral.ucar.edu/projects/wrf_hydro/overview>
 
    WPS 
       WRF Preprocessing System
-
-.. `NetCDF`: https://www.unidata.ucar.edu/software/netcdf/
