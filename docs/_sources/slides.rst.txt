@@ -11,7 +11,14 @@ Regional Flood Management
     :align: center
     :width: 100%
 
+REON Rio Grande Valley
+
 .. include:: /introduction/slides.rst
 .. include:: /introduction/Regional-WPP/slides.rst
 .. include:: /introduction/RWRAC/slides.rst    
-.. include:: /introduction/RATES/slides.rst
+
+|logo| An Affordable Real-Time Sensor Network for Regional Water Resource Management
+------------------------------------------------------------------------------------
+
+.. |logo| image:: /_static/RGVFloodLogo.png
+   :width: 20%

@@ -20,10 +20,10 @@ def download_files():
     global config
     load_dotenv()
     config = toml.load('../spyce.toml')
-    makedirs('downloads', exist_ok = True) 
-    for filename, url in config['SPHINX']['downloads'].items():
+    makedirs('_static', exist_ok = True) 
+    for filename, url in config['SPHINX']['_static'].items():
         # print(filename, url)
-        with open(join("downloads", filename), 'wb') as fout:
+        with open(join("_static", filename), 'wb') as fout:
             response = requests.get(url, stream=True)
             response.raise_for_status()
             # Write response data to file
@@ -115,12 +115,12 @@ extensions = [
 
 intersphinx_mapping = {'rgvflood': ('https://glossary.rgvflood.com/en/latest', None)}
 
-bibtex_bibfiles = ['downloads/references.bib']
+bibtex_bibfiles = ['_static/references.bib']
 # plantuml = 'java -jar /usr/share/plantuml/plantuml.jar'
 plantuml = "plantuml"
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['downloads']
+templates_path = ['_static']
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -214,7 +214,7 @@ html_short_title = project
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-html_logo = "downloads/RGVFloodLogo.png"
+html_logo = "_static/RGVFloodLogo.png"
 html_baseurl = "https://docs.rgvflood.com"
 
 # The name of an image file (within the static path) to use as favicon of the
@@ -225,7 +225,7 @@ html_baseurl = "https://docs.rgvflood.com"
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static','downloads']
+html_static_path = ['_static']
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
@@ -338,7 +338,7 @@ latex_documents = [
 # the title page.
 
 # latex_logo = https://raw.githubusercontent.com/RATESResearch/RGVFlood/main/assets/RATESLogo.png
-latex_logo = 'downloads/RATESLogo.png'
+latex_logo = '_static/RATESLogo.png'
 
 # For "manual" documents, if this is true, then toplevel headings are parts,
 # not chapters.
@@ -352,7 +352,7 @@ latex_logo = 'downloads/RATESLogo.png'
 
 # Documents to append as an appendix to all manuals.
 latex_appendices = ['glossary']
-# latex_appendices = ['downloads/glossary', 'downloads/bibliography']
+# latex_appendices = ['_static/glossary', '_static/bibliography']
 
 # If false, no module index is generated.
 #latex_domain_indices = True

@@ -10,7 +10,7 @@ AUTHOR='First Author'
 OTHER_AUTHORS='\and Second Author \and Third Author \and ETC'
 VERSION='0.0.0'
 
-[SPHINX.downloads]
+[SPHINX._static]
 # Files to be downloaded to the "downloads" directory. This directory is ignored by git.
 'RATESLogo.png' = 'https://raw.githubusercontent.com/RATESResearch/RGVFlood/main/src/assets/RATESLogo.png'
 'RGVFloodLogo.png' = 'https://raw.githubusercontent.com/RATESResearch/RGVFlood/main/src/assets/RGVFloodLogo.png'
