@@ -1,9 +1,25 @@
+[build-system]
+requires = [ "poetry-core>=1.0.0",]
+build-backend = "poetry.core.masonry.api"
+
 [tool.poetry]
 name = "rgvflood"
 version = "0.1.0"
 description = "Lower Rio Grande Valley Flood Management"
-authors = ["Andrew Ernest <anernest@ratesresearch.org>"]
+authors = [ "Andrew Ernest <anernest@ratesresearch.org>",]
 license = "MIT"
+
+[tool.spyce]
+copyright_year = "Content-Length: 244\r"
+organization = "\r"
+sponsor = "{\"jsonrpc\":\"2.0\",\"method\":\"textDocument/didOpen\",\"params\":{\"textDocument\":{\"uri\":\"file:///home/anernest/Git/RGVFlood/src/_static/bibliography.rst\",\"languageId\":\"restructuredtext\",\"version\":1,\"text\":\":orphan:\\n\\n.. bibliography::\\n   :all:\\n\"}}}Content-Length: 163\r"
+document_id = "\r"
+html_logo = "{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"textDocument/documentSymbol\",\"params\":{\"textDocument\":{\"uri\":\"file:///home/anernest/Git/RGVFlood/src/_static/bibliography.rst\"}}}Content-Length: 262\r"
+latex_logo = "\r"
+techreviewer = "{\"jsonrpc\":\"2.0\",\"id\":2,\"method\":\"textDocument/codeAction\",\"params\":{\"textDocument\":{\"uri\":\"file:///home/anernest/Git/RGVFlood/src/_static/bibliography.rst\"},\"range\":{\"start\":{\"line\":0,\"character\":0},\"end\":{\"line\":0,\"character\":0}},\"context\":{\"diagnostics\":[]}}}Content-Length: 161\r"
+techtitle = "\r"
+finalreviewer = "{\"jsonrpc\":\"2.0\",\"id\":3,\"method\":\"textDocument/documentLink\",\"params\":{\"textDocument\":{\"uri\":\"file:///home/anernest/Git/RGVFlood/src/_static/bibliography.rst\"}}}Content-Length: 62\r"
+finaltitle = "\r"
 
 [tool.poetry.dependencies]
 python = ">=3.8,<3.12"
@@ -16,10 +32,9 @@ sphinxcontrib-plantuml = "^0.24"
 python-dotenv = "^0.20.0"
 sphinxcontrib-mermaid = "^0.7.1"
 sphinx-revealjs = "^2.0.1"
-spyce = {git = "https://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@github.com/RATESResearch/Spyce.git", rev = "main"}
 
 [tool.poetry.dev-dependencies]
 
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+[tool.poetry.dependencies.spyce]
+git = "https://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@github.com/RATESResearch/Spyce.git"
+rev = "main"
