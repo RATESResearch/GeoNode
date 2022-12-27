@@ -5,7 +5,7 @@
     <charset>UTF-8</charset>
     <numDecimals>8</numDecimals>
     <onlineResource>http://geoserver.org</onlineResource>
-    <proxyBaseUrl>http://rgvflood.water-wizard.org/geoserver</proxyBaseUrl>
+    <proxyBaseUrl>http://localhost:8080/geoserver</proxyBaseUrl>
     <verbose>false</verbose>
     <verboseExceptions>false</verboseExceptions>
     <metadata>
@@ -75,4 +75,3 @@
   <webUIMode>DEFAULT</webUIMode>
   <resourceErrorHandling>SKIP_MISCONFIGURED_LAYERS</resourceErrorHandling>
 </global>
- 

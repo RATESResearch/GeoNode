@@ -4,7 +4,7 @@
   <className>org.geoserver.security.GeoServerRestRoleService</className>
   <adminGroup>ROLE_ADMIN</adminGroup>
   <groupAdminGroup>ROLE_ADMIN</groupAdminGroup>
-  <baseUrl>http://geonode:80</baseUrl>
+  <baseUrl>http://localhost:8000</baseUrl>
   <rolesRESTEndpoint>/api/roles</rolesRESTEndpoint>
   <adminRoleRESTEndpoint>/api/adminRole</adminRoleRESTEndpoint>
   <usersRESTEndpoint>/api/users</usersRESTEndpoint>
@@ -14,4 +14,4 @@
   <cacheConcurrencyLevel>4</cacheConcurrencyLevel>
   <cacheMaximumSize>60000</cacheMaximumSize>
   <cacheExpirationTime>60000</cacheExpirationTime>
-</authKeyRESTRoleService> 
+</authKeyRESTRoleService>

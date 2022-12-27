@@ -9,7 +9,7 @@
 			<topicSender>
 				<username>guest</username>
 				<password>guest</password>
-				<host>rabbitmq</host>
+				<host>localhost</host>
 				<port>5672</port>
 				<virtualHost>/</virtualHost>
 				<exchangeName>geonode</exchangeName>
@@ -26,7 +26,7 @@
 			<topicSender>
 				<username>guest</username>
 				<password>guest</password>
-				<host>rabbitmq</host>
+				<host>localhost</host>
 				<port>5672</port>
 				<virtualHost>/</virtualHost>
 				<exchangeName>geonode</exchangeName>
