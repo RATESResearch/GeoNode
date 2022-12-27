@@ -1,260 +1,146 @@
-# Configuration file for the Sphinx documentation builder.
-#
-# This file only contains a selection of the most common options. For a full
-# list see the documentation:
-# https://www.sphinx-doc.org/en/master/usage/configuration.html
+# -*- coding: utf-8 -*-
+import os, sys, re, toml
 
-# -- Path setup --------------------------------------------------------------
-# serve to show the default.
-
-import os
-import sys
-import configparser
-import requests
-# Pulling version from config.ini for now, repurposed as deliverable id
-# from importlib.metadata import version
-# release = version('spyce')
-# for example take major/minor
-# version = '.'.join(release.split('.')[:2])
-
-config = configparser.ConfigParser()
-config.sections()
-config.read('../config.ini')
-
-def download_file(filename, url):
-    """
-    Download an URL to a file
-    """
-    with open(filename, 'wb') as fout:
-        response = requests.get(url, stream=True)
-        response.raise_for_status()
-        # Write response data to file
-        for block in response.iter_content(4096):
-            fout.write(block)
-
-def download_if_not_exists(filename, url):
-    """
-    Download a URL to a file if the file
-    does not exist already.
-
-    Returns
-    -------
-    True if the file was downloaded,
-    False if it already existed
-    """
-    if not os.path.exists(filename):
-        download_file(filename, url)
-        return True
-    return False
-
-os.makedirs('assets', exist_ok = True) 
-os.makedirs('_templates', exist_ok = True) 
-download_file('assets/RATESLogo.png', 'https://raw.githubusercontent.com/RATESResearch/RGVFlood/main/src/assets/RATESLogo.png')
-download_file('assets/RGVFloodLogo.png', 'https://raw.githubusercontent.com/RATESResearch/RGVFlood/main/src/assets/RGVFloodLogo.png')
-download_file('_templates/layout.html', 'https://raw.githubusercontent.com/RATESResearch/RGVFlood/main/src/_templates/layout.html')
-download_file('glossary.rst', 'https://raw.githubusercontent.com/RATESResearch/glossary/main/glossary.rst')
-download_file('bibliography.rst', 'https://raw.githubusercontent.com/RATESResearch/bibliography/main/bibliography.rst')
-download_file('assets/references.bib', 'https://raw.githubusercontent.com/RATESResearch/bibliography/main/references.bib')
-#on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
-on_rtd = True
-
-# If extensions (or modules to document with autodoc) are in another directory,
-# add these directories to sys.path here. If the directory is relative to the
-# documentation root, use os.path.abspath to make it absolute, like shown here.
-#
-# import os
-# import sys
-sys.path.insert(0, os.path.abspath('..'))
-
+sys.path.insert(0, os.path.abspath('../..'))
 
 # -- Project information -----------------------------------------------------
 
-project = config['SPHINX']['PROJECT_NAME']
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PYPROJECT_TOML = toml.load(os.path.join(PROJECT_ROOT,'pyproject.toml'))
+# SPYCE_TOML = toml.load(os.path.join(PROJECT_ROOT,basename(Repo('..').get_config().get(('remote', 'origin'), 'url')).decode("utf-8").strip('.git')+'.toml'))
+SPYCE_TOML = toml.load(os.path.join(PROJECT_ROOT,'spyce.toml'))
 
-copyright = config['SPHINX']['COPYRIGHT_YEAR'] \
+name = PYPROJECT_TOML['tool']['poetry']['name']
+project = PYPROJECT_TOML['tool']['poetry']['description']
+author = PYPROJECT_TOML['tool']['poetry']['authors'][0]
+release = SPYCE_TOML['sphinx']['document_id']
+copyright = SPYCE_TOML['sphinx']['copyright_year'] \
     + ', ' \
-    + config['SPHINX']['ORGANIZATION']
-
-author = config['SPHINX']['AUTHOR']
-
-# The full version, including alpha/beta/rc tags
-release = config['SPHINX']['VERSION']
-
+    + SPYCE_TOML['sphinx']['organization']
+sponsor = SPYCE_TOML['sphinx']['sponsor']
+latex_logo = SPYCE_TOML['sphinx']['latex_logo']
+html_logo = SPYCE_TOML['sphinx']['html_logo']
+techreviewer = SPYCE_TOML['sphinx']['techreviewer']
+techtitle = SPYCE_TOML['sphinx']['techtitle']
+finalreviewer = SPYCE_TOML['sphinx']['finalreviewer']
+finaltitle = SPYCE_TOML['sphinx']['finaltitle']
 
 # -- General configuration ---------------------------------------------------
 
-# Add any Sphinx extension module names here, as strings. They can be
-# extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
-# ones.
 extensions = [
+# 'slides.slides',
 'sphinxcontrib.bibtex',
 'sphinx.ext.autodoc',
-'hieroglyph',
+'ablog',
+'sphinx.ext.intersphinx',
 'sphinx.ext.todo',
+'sphinx.ext.autosummary',
+# 'invocations.autodoc',
 'sphinxcontrib.plantuml',
-'sphinxcontrib.mermaid',
-'sphinx_revealjs',
+"sphinx_revealjs",
+'sphinxcontrib.programoutput',
+# 'zot4rst.sphinx',
+# 'sphinx_immaterial',
 ]
 
-bibtex_bibfiles = ['assets/references.bib']
-# plantuml = 'java -jar /usr/share/plantuml/plantuml.jar'
-plantuml = "plantuml"
+autosummary_imported_members = True
 
-# Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+autodoc_docstring_signature = True
 
-# List of patterns, relative to source directory, that match files and
-# directories to ignore when looking for source files.
-# This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+slide_include_slides = True
 
-# The name of the Pygments (syntax highlighting) style to use.
+# templates_path = ['_static']
+intersphinx_mapping = {'rgvflood': ('https://glossary.rgvflood.com/en/latest', None)}
+source_suffix = ".rst"
+master_doc = "index"
+language = "en"
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 pygments_style = 'sphinx'
-
-# A list of ignored prefixes for module index sorting.
-#modindex_common_prefix = []
-# Display todos by setting to True
-todo_include_todos = True
-
 numfig = True
-#numfig_format['figure'] = 'Figure %s'
 numfig_format = {'figure': 'Figure: %s', 'table': 'Table: %s', 'code-block': 'Listing: %s', 'section': 'Section: %s'}
 
-# -- Options for HTML Slide output ---------------------------------------------------
 
-slide_theme = 'slides2'
-#slide_theme_path = ['_static']
-#slide_theme_options = {
-#    'presenters': [
-#        {
-#            'name': 'Andrew N.S. Ernest, Ph.D., P.E., BCEE, D.WRE',
-#            # 'twitter': '@author',
-#            # 'www': 'http://example.com/author',
-#            # 'github': 'http://github.com/author/example'
-#        },
-#    ],
-#}
-#slide_theme_options = {'custom_css':'custom.css'}
+# -- Options for ablog output ---------------------------------------------------
 
-# slide_link_html_to_slides = not on_rtd
-# slide_link_html_sections_to_slides = not on_rtd
-# slide_relative_path = "./slides/"
-#
-# slide_link_to_html = True
-# slide_html_relative_path = "../"
+blog_authors = {
+    'Andy': ('Andrew Ernest', 'http://water-wizard.org'),
+}
+blog_default_author = "Andy"
+
+# -- Options for bibtex output ---------------------------------------------------
+
+bibtex_default_style = 'plain'
+bibtex_reference_style = 'super'
+bibtex_bibfiles = ['references.bib']
+
+# -- Options for plantuml output ---------------------------------------------------
+
+plantuml = "plantuml"
+
+# -- Options for todo output ---------------------------------------------------
+
+todo_include_todos = True
 
 # -- Options for HTML output ---------------------------------------------------
 
-# The theme to use for HTML and HTML Help pages.  See the documentation for
-# a list of builtin themes.
+on_rtd = False
+
 if on_rtd:
     import sphinx_rtd_theme
-
     html_theme = 'sphinx_rtd_theme'
     html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-
+    html_theme_options = {
+    "style_external_links" : True,
+    }
 else:
+    # html_theme = 'sphinx_immaterial'
     html_theme = 'alabaster'
-
-# Theme options are theme-specific and customize the look and feel of a theme
-# further.  For a list of options available for each theme, see the
-# documentation.
-#html_theme_options = {}
-
-# Add any paths that contain custom themes here, relative to this directory.
-#html_theme_path = []
-
-# The name for this set of Sphinx documents.  If None, it defaults to
-# "<project> v<release> documentation".
-html_title = config['SPHINX']['PROJECT_TITLE']
-
-# A shorter title for the navigation bar.  Default is the same as html_title.
-html_short_title = project
-
-# The name of an image file (relative to this directory) to place at the top
-# of the sidebar.
-html_logo = "assets/RGVFloodLogo.png"
+    # html_theme = 'nature'
+    # html_theme = 'agogo'
+html_title = project
+html_short_title = name
 html_baseurl = "https://docs.rgvflood.com"
-
-# The name of an image file (within the static path) to use as favicon of the
-# docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
-# pixels large.
-#html_favicon = None
-
-# Add any paths that contain custom static files (such as style sheets) here,
-# relative to this directory. They are copied after the builtin static files,
-# so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['assets']
-
-# If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
-# using the given strftime format.
-#html_last_updated_fmt = '%b %d, %Y'
-
-# If true, SmartyPants will be used to convert quotes and dashes to
-# typographically correct entities.
-#html_use_smartypants = True
-
-# Custom sidebar templates, maps document names to template names.
-#html_sidebars = {}
-
-# Additional templates that should be rendered to pages, maps page names to
-# template names.
-#html_additional_pages = {}
-
-# If false, no module index is generated.
-#html_domain_indices = True
-
-# If false, no index is generated.
-#html_use_index = True
-
-# If true, the index is split into individual pages for each letter.
-#html_split_index = False
-
-# If true, links to the reST sources are added to the pages.
-#html_show_sourcelink = True
-
-# If true, "Created using Sphinx" is shown in the HTML footer. Default is True.
-#html_show_sphinx = True
-
-# If true, "(C) Copyright ..." is shown in the HTML footer. Default is True.
-#html_show_copyright = True
-
-# If true, an OpenSearch description file will be output, and all pages will
-# contain a <link> tag referring to it.  The value of this option must be the
-# base URL from which the finished HTML is served.
-#html_use_opensearch = ''
-
-# This is the file name suffix for HTML files (e.g. ".xhtml").
-#html_file_suffix = None
-
-# Output file base name for HTML help builder.
+html_static_path = ['_static']
 htmlhelp_basename = project
+html_sidebars = {
+   '**': [ 
+        'about.html',
+        'navigation.html',
+        'relations.html',
+        'searchbox.html',
+        'donate.html',
+        'postcard.html', 
+        'recentposts.html',
+        'tagcloud.html', 
+        'categories.html',
+        'archives.html', ]
+}
 
-pdf_documents = [('index', u'rst2pdf', u'Sample rst2pdf doc', u'Your Name'),]
-# index - master document
-# rst2pdf - name of the generated pdf
-# Sample rst2pdf doc - title of the pdf
-# Your Name - author name in the pdf
+# -- Options for Revealjs Slide output ---------------------------------------------------
+revealjs_script_conf = """
+    { 
+        hash: true,
+        width: 1600,
+        height: 900,
+    }
+"""
+revealjs_script_plugins = [
+    {
+        "src": "revealjs4/plugin/highlight/highlight.js",
+        "name": "RevealHighlight",
+    },
+    {
+        "src": "revealjs4/plugin/notes/notes.js",
+        "name": "RevealNotes",
+    },    
+]
+revealjs_static_path = ['_static']
+revealjs_style_theme = 'bluetunnel.css'
 
-# -- Options for LaTeX output
-# --------------------------------------------------
 
-latex_elements = {
-# The paper size ('letterpaper' or 'a4paper').
-#'papersize': 'letterpaper',
-
-# The font size ('10pt', '11pt' or '12pt').
-'pointsize': '12pt',
-
-# Additional stuff for the LaTeX preamble.
-'preamble': '\\usepackage{svg}',
-
-'releasename': html_title+'\par Project Deliverable ID',
-'extraclassoptions': 'openany,oneside',
-'babel': '\\usepackage[american]{babel}',
-'maketitle': r''' 
+# -- Options for LaTeX output --------------------------------------------------
+maketitle = r''' 
 \sphinxmaketitle
-
     %\renewcommand{\familydefault}{\sfdefault}
     \newcommand\signature[3]{% Role; Name; Department
     %\begin{center}
@@ -272,45 +158,35 @@ latex_elements = {
     %\end{center}
     }
     \newcommand\insertdate[1][\today]{\vfill\begin{flushright}#1\end{flushright}}
-
     {\LARGE\sffamily \textbf{Approval Page}}
     
-    \signature{Technical Review By}{William Kirkey, Ph.D.}{Chief of Research and Technology Development}
+    \signature{Technical Review By}{<techreviewer>}{<techtitle>}
     
-    \signature{Final Approval For Submission}{Andrew N.S. Ernest, Ph.D., P.E., BCEE, D.WRE}{Chief Executive Officer}
+    \signature{Final Approval For Submission}{<finalreviewer>}{<finaltitle>}
         
     \insertdate
+'''
 
-''',
+maketitle = re.sub('<techreviewer>', techreviewer, maketitle)
+maketitle = re.sub('<techtitle>', techtitle, maketitle)
+maketitle = re.sub('<finalreviewer>', finalreviewer, maketitle)
+maketitle = re.sub('<finaltitle>', finaltitle, maketitle)
+
+latex_elements = {
+'pointsize': '12pt',
+'preamble': '\\usepackage{svg}',
+'releasename': html_title+'\par Project Deliverable ID',
+'extraclassoptions': 'openany,oneside',
+'babel': '\\usepackage[american]{babel}',
+'maketitle': maketitle,
 }
-
-authors = author + ' ' + config['SPHINX']['OTHER_AUTHORS']
-# Grouping the document tree into LaTeX files. List of tuples
-# (source start file, target name, title, author, documentclass [howto/manual]).
+authors = author
 latex_documents = [
-  ('index', project+'.tex', 'Lower Rio Grande Valley Development Council Flood Infrastructure Fund',
+  ('index', name+'.tex', sponsor,
    authors, 
    'manual'),
 ]
 
-# The name of an image file (relative to this directory) to place at the top of
-# the title page.
+latex_show_urls = 'footnote'
 
-# latex_logo = https://raw.githubusercontent.com/RATESResearch/RGVFlood/main/assets/RATESLogo.png
-latex_logo = 'assets/RATESLogo.png'
-
-# For "manual" documents, if this is true, then toplevel headings are parts,
-# not chapters.
-#latex_use_parts = False
-
-# If true, show page references after internal links.
-#latex_show_pagerefs = False
-
-# If true, show URL addresses after external links.
-#latex_show_urls = False
-
-# Documents to append as an appendix to all manuals.
-latex_appendices = ['glossary', 'bibliography']
-
-# If false, no module index is generated.
-#latex_domain_indices = True
+latex_appendices = ['glossary']

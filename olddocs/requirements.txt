@@ -1,5 +1,0 @@
-sphinx
-sphinx_rtd_theme
-hieroglyph
-sphinxcontrib.bibtex
-sphinxcontrib-plantuml

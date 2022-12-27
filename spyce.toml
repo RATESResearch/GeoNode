@@ -1,0 +1,142 @@
+[debug]
+warn = true
+hide = false
+
+[app]
+name = "geonode"
+path = ".venv/src/geonode"
+
+[sphinx]
+source_dir = "src"
+build_dir = "build"
+copyright_year = "2022"
+organization = "Research, Applied Technology, Education and Service, Inc."
+document_id = "Dev"
+sponsor = "Research, Applied Technology, Education and Service, Inc."
+latex_logo = "_static/RATESLogo.png"
+html_logo = "_static/RATESLogo.png"
+techreviewer = "Andrew N.S. Ernest, Ph.D., P.E., BCEE, D.WRE"
+techtitle = "Lead Software Developer"
+finalreviewer = "Andrew N.S. Ernest, Ph.D., P.E., BCEE, D.WRE"
+finaltitle = "President and CEO"
+
+[auth]
+service_account_file = "waterwizard-8cb9d9d2e4dd.json"
+
+[gcp]
+project_id = "waterwizard"
+region = "us-south1"
+zone = "us-south1-c"
+instance = "waterwizard"
+
+[gce]
+family = "debian-11"
+
+[remote]
+default = "jumbo"
+apt = "dtach"
+
+[app.env]
+django_superuser_password = "rates-2005"
+django_superuser_username = "admin"
+django_superuser_email = "admin@water-wizard.org"
+app_port = "8000"
+nginx_port = "80"
+prod_server_name = "water-wizard.org"
+dev_server_name = "dev.water-wizard.org"
+media_root = "/data/WaterWizard/media/"
+static_root = "/data/WaterWizard/static/"
+docs_root = "/data/WaterWizard/build/html/"
+
+[app.modes]
+run = "Standalone Run"
+compose = "Docker Compose"
+k8s = "Kubernetes Cluster"
+
+[app.db]
+database_name = "geonode"
+database_user = "geonode"
+database_password = "geonode"
+django_superuser_password = "geonode"
+django_superuser_username = "admin"
+django_superuser_email = "admin@water-wizard.org"
+
+[app.k8s]
+media_root = "/data/geonode/media/"
+static_root = "/data/geonode/static/"
+docs_root = "/data/geonode/docs/"
+name = "geonodeweb"
+
+[gcp.cluster]
+name = "waterwizard"
+initial_node_count = 3
+
+[gcp.sql]
+instance = "waterwizard"
+version = "POSTGRES_13"
+tier = "db-f1-micro"
+
+[remote.spyce]
+connection = "anernest_ratesresearch_org@spyce.water-wizard.org"
+base_dir = "/home/anernest_ratesresearch_org"
+
+[remote.woozle]
+connection = "anernest_ratesresearch_org@woozle.water-wizard.org"
+base_dir = "/home/anernest_ratesresearch_org"
+
+[remote.jumbo]
+connection = "anernest@jumbo.water-wizard.org"
+base_dir = "/home/anernest"
+
+[remote.rabbit]
+connection = "anernest@rabbit.water-wizard.org:49022"
+base_dir = "/home/anernest"
+
+[remote.kanga]
+connection = "anernest@kanga.water-wizard.org:34022"
+base_dir = "/home/anernest"
+
+[remote.winifred]
+connection = "anernest@winifred.water-wizard.org:57022"
+base_dir = "/home/anernest"
+
+[kind.cluster]
+host = "localhost"
+name = "waterwizard"
+config = "src/waterwizard/kind-config.yaml"
+
+[app.db.run]
+mode = "run"
+database_host = "db"
+
+[app.db.compose]
+mode = "compose"
+hostname = "water-wizard.org"
+database_host = "cloudsql_proxy"
+network = "geonode"
+
+[app.db.k8s]
+mode = "k8s"
+hostname = "water-wizard.org"
+database_host = "cloudsql-proxy"
+network = "waterwizard"
+
+[app.k8s.env]
+media_root = "/data/WaterWizard/media/"
+static_root = "/data/WaterWizard/static/"
+docs_root = "/data/WaterWizard/docs/"
+
+[app.k8s.manifest]
+certificates = "src/waterwizard/managed-certificates.yaml"
+pv = "src/waterwizard/pv.yaml"
+pvc = "src/waterwizard/pvc.yaml"
+
+[app.db.run.dbs]
+
+[app.db.compose.dbs]
+database = "waterwizard"
+
+[app.db.compose.database]
+user = "waterwizard"
+password = "rates-2005"
+host = "cloudsql-proxy"
