@@ -11,6 +11,11 @@ Fortunately, GeoNode's built-in theming capabilities are sufficient for initial 
 
     #. Images depicting various flooding events are used a slide show content.
 
+
+
+Archive 
+=======
+
 1. Log into a django container in one of the apps pods:
 
 .. code::

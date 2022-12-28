@@ -1,0 +1,114 @@
+steps:
+
+# deploy namespace
+- name: "gcr.io/cloud-builders/gke-deploy"
+  args:
+  - run
+  - --image=${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:latest
+  - --namespace=${_NAMESPACE}
+  - --filename=namespace.yaml
+  - --location=${_LOCATION}
+  - --cluster=${_CLUSTER}
+  - --output=./output/namespace
+
+# deploy managed certificates
+- name: "gcr.io/cloud-builders/gke-deploy"
+  args:
+  - run
+  - --image=${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:latest
+  - --namespace=${_NAMESPACE}
+  - --filename=src/${_IMAGE}/mc.yaml
+  - --location=${_LOCATION}
+  - --cluster=${_CLUSTER}
+  - --output=./output/mc
+
+# deploy persistent volume
+- name: "gcr.io/cloud-builders/gke-deploy"
+  args:
+  - run
+  - --image=${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:latest
+  - --namespace=${_NAMESPACE}
+  - --filename=src/${_IMAGE}/pv.yaml
+  - --location=${_LOCATION}
+  - --cluster=${_CLUSTER}
+  - --output=./output/pv
+
+# deploy persistent volume claim
+- name: "gcr.io/cloud-builders/gke-deploy"
+  args:
+  - run
+  - --filename=src/${_IMAGE}/pvc.yaml
+  - --image=${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:latest
+  - --namespace=${_NAMESPACE}
+  - --location=${_LOCATION}
+  - --cluster=${_CLUSTER}
+  - --output=./output/pvc
+
+# deploy app
+- name: "gcr.io/cloud-builders/gke-deploy"
+  args:
+  - run
+  - --image=${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:latest
+  - --namespace=${_NAMESPACE}  
+  - --filename=src/${_IMAGE}/deployment.yaml
+  - --location=${_LOCATION}
+  - --cluster=${_CLUSTER}
+  - --output=./output/deployment
+  - --timeout=15m0s
+
+# deploy backend config
+- name: "gcr.io/cloud-builders/gke-deploy"
+  args:
+  - run
+  - --image=${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:latest
+  - --namespace=${_NAMESPACE}  
+  - --filename=src/${_IMAGE}/backendconfig.yaml
+  - --location=${_LOCATION}
+  - --cluster=${_CLUSTER}
+  - --output=./output/backendconfig
+
+# deploy service
+- name: "gcr.io/cloud-builders/gke-deploy"
+  args:
+  - run
+  - --image=${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:latest
+  - --namespace=${_NAMESPACE}  
+  - --filename=src/${_IMAGE}/service.yaml
+  - --location=${_LOCATION}
+  - --cluster=${_CLUSTER}
+  - --output=./output/service
+
+# deploy ingress
+- name: "gcr.io/cloud-builders/gke-deploy"
+  args:
+  - run
+  - --image=${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:latest
+  - --namespace=${_NAMESPACE}  
+  - --filename=src/${_IMAGE}/ingress.yaml
+  - --location=${_LOCATION}
+  - --cluster=${_CLUSTER}
+  - --output=./output/ingress
+
+timeout: 2400s
+
+
+# # Clone GeoNodeGCP
+# - name: 'gcr.io/cloud-builders/git'
+#   args: ['clone', 'https://${_TOKEN}@github.com/RATESResearch/GeoNodeGCP']
+
+# # Clone REONode
+# - name: 'gcr.io/cloud-builders/git'
+#   args: ['clone', 'https://${_TOKEN}@github.com/RATESResearch/REONode']
+
+# # envsubst namespace
+# - name: gcr.io/${PROJECT_ID}/envsubst
+#   args: ['src/${_IMAGE}/templates/namespace.template.yaml'] # , '>', '${_NAME}/src/${_NAMESPACE}/namespace.yaml']
+
+    # envsubst < ${PROJECT_DIR}/src/templates/namespace.template.yaml > ${PROJECT_DIR}/src/${NAMESPACE}/namespace.yaml
+    # envsubst < ${PROJECT_DIR}/src/templates/mc.template.yaml > ${PROJECT_DIR}/src/${NAMESPACE}/mc.yaml    
+    # envsubst < ${PROJECT_DIR}/src/templates/pv.template.yaml > ${PROJECT_DIR}/src/${NAMESPACE}/pv.yaml
+    # envsubst < ${PROJECT_DIR}/src/templates/pvc.template.yaml > ${PROJECT_DIR}/src/${NAMESPACE}/pvc.yaml
+    # envsubst < ${PROJECT_DIR}/src/templates/deployment.template.yaml > ${PROJECT_DIR}/src/${NAMESPACE}/deployment.yaml
+    # envsubst < ${PROJECT_DIR}/src/templates/service.template.yaml > ${PROJECT_DIR}/src/${NAMESPACE}/service.yaml
+    # envsubst < ${PROJECT_DIR}/src/templates/ingress.template.yaml > ${PROJECT_DIR}/src/${NAMESPACE}/ingress.yaml
+    # envsubst < ${PROJECT_DIR}/src/templates/clouddeploy.template.yaml > ${PROJECT_DIR}/src/${NAMESPACE}/clouddeploy.yaml
