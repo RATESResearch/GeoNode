@@ -9,3 +9,9 @@ RGVFlood
    :caption: Contents:
 
    introduction/index
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Project Reports
+
+   eui_dev/index

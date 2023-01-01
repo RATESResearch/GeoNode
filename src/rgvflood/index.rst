@@ -10,4 +10,4 @@ Extending REONode for RGVFlood
     # Create database secrets
     kubectl create secret generic ${NAMESPACE}-secrets --from-env-file ${PROJECT_DIR}/src/${NAMESPACE}/.env  --namespace ${NAMESPACE}
     # Re-apply
-    kubectl rollout restart deployment/rgvflood-app
+    kubectl rollout restart deployment/rgvflood-app -n rgvflood

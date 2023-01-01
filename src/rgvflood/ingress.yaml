@@ -19,14 +19,21 @@ spec:
   - host: rgvflood.water-wizard.org
     http: &backend
       paths:
+      - path: "/geoserver"
+        pathType: Prefix
+        backend:
+          service:
+            name: rgvflood-svc
+            port:
+              number: 8080
       - path: "/*"
         pathType: ImplementationSpecific
         backend:
           service:
             name: rgvflood-svc
             port:
-              number: 8001
+              number: 8001              
   # https://github.com/kubernetes-sigs/aws-load-balancer-controller/issues/908
-  # - host: jumbo.water-wizard.org
-  #   http: *backend         
+  - host: rgvflood.com
+    http: *backend         
 

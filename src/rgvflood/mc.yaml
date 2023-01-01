@@ -5,4 +5,6 @@ metadata:
   namespace: rgvflood
 spec:
   domains:
+    - rgvflood.com
     - rgvflood.water-wizard.org
+

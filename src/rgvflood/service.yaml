@@ -12,10 +12,13 @@ spec: # Service's specification
   type: NodePort
   selector:
     app: rgvflood-app  
-    # app: rgvflood-app
     # tier: web
   ports:
   - name: http
     protocol: TCP
     port: 8001
     targetPort: 8001
+  - name: geoserver
+    protocol: TCP
+    port: 8001
+    targetPort: 8080
