@@ -2,6 +2,13 @@ Extending REONode for RGVFlood
 ==============================
 
 :term:`REONode` is an implementation of :term:`GeoNodeGCP`, incorporating :term:`REON` extensions and applications. :term:`RGVFlood` is a production implementation of :term:`REONode` incorporating extensions and applications specified for the :term:`RGVFlood` deployment. :term:`RGVFlood` is available online at <http://rgvflood.com>. This section describes the process of constructing the base app for :t
+
+.. code::
+
+    # Change directory to PROJECT_DIR
+    # Complete project.env and save as .env
+    # Export the Project Sensitive Data
+    set -a; . .env; set +a
     # Edit the app :code:`.env` from :code:`template.env`
     envsubst < ${PROJECT_DIR}/.env > ${PROJECT_DIR}/src/${NAMESPACE}/.env
     envsubst < ${PROJECT_DIR}/src/templates/template.env >> ${PROJECT_DIR}/src/${NAMESPACE}/.env

@@ -6,5 +6,7 @@ RGVFlood End-User Interface Development
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Contents
 
+   background/index
+   

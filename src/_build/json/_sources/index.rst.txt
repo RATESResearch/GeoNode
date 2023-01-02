@@ -14,4 +14,4 @@ RGVFlood
    :maxdepth: 2
    :caption: Project Reports
 
-   eui_dev/index
+   euidev/index

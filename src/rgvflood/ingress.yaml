@@ -36,4 +36,3 @@ spec:
   # https://github.com/kubernetes-sigs/aws-load-balancer-controller/issues/908
   - host: rgvflood.com
     http: *backend         
-

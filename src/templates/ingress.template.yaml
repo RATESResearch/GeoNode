@@ -16,9 +16,16 @@ spec:
           # name: http
           number: 8001 # Should match the port used by the Service
   rules:
-  - host: ${NAMESPACE}.water-wizard.org
+  - host: ${PROJECT_URL}
     http: &backend
       paths:
+      - path: "/geoserver"
+        pathType: Prefix
+        backend:
+          service:
+            name: ${NAMESPACE}-svc
+            port:
+              number: 8080
       - path: "/*"
         pathType: ImplementationSpecific
         backend:
