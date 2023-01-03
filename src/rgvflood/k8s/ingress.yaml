@@ -16,7 +16,7 @@ spec:
           # name: http
           number: 8001 # Should match the port used by the Service
   rules:
-  - host: rgvflood.water-wizard.org
+  - host: rgvflood.com
     http: &backend
       paths:
       - path: "/geoserver"
@@ -32,7 +32,8 @@ spec:
           service:
             name: rgvflood-svc
             port:
-              number: 8001              
+              number: 8001
   # https://github.com/kubernetes-sigs/aws-load-balancer-controller/issues/908
-  - host: rgvflood.com
-    http: *backend         
+  # - host: jumbo.water-wizard.org
+  #   http: *backend         
+
