@@ -6,7 +6,7 @@ x-common-django:
   image: us-south1-docker.pkg.dev/waterwizard/geonode/geonode:4.0
   restart: on-failure
   env_file:
-    - ../.env
+    - .env
   volumes:
     - type: bind
       source: ${SHARED_VOLUMES}/statics
@@ -108,7 +108,7 @@ services:
       timeout: 10s
       retries: 10
     env_file:
-      - ../.env
+      - .env
     volumes:
       - type: bind
         source: ${SHARED_VOLUMES}/statics
