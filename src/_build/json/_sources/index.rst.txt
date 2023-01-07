@@ -12,6 +12,6 @@ RGVFlood
 
 .. toctree::
    :maxdepth: 2
-   :caption: Project Reports
+   :caption: Project Reports:
 
    euidev/index

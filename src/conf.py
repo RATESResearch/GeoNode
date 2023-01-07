@@ -182,11 +182,10 @@ latex_elements = {
 }
 authors = author
 latex_documents = [
-  ('index', name+'.tex', sponsor,
-   authors, 
-   'manual'),
+  ('index', name+'.tex', sponsor, authors, 'manual'),
+  ('euidev/index', 'euidev.tex', sponsor, authors, 'manual'),
 ]
 
-latex_show_urls = 'footnote'
+latex_show_urls = 'no'
 
-latex_appendices = ['glossary']
+# latex_appendices = ['glossary']
