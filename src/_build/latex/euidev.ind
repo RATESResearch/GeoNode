@@ -6,23 +6,23 @@
 
   \bigletter G
   \item \spxentry{geonodegcp}
-    \subitem \spxentry{module}, \hyperpage{5}
+    \subitem \spxentry{module}, \hyperpage{4}
 
   \indexspace
   \bigletter M
   \item \spxentry{module}
-    \subitem \spxentry{geonodegcp}, \hyperpage{5}
-    \subitem \spxentry{reoncc}, \hyperpage{5}
-    \subitem \spxentry{reonode}, \hyperpage{5}
+    \subitem \spxentry{geonodegcp}, \hyperpage{4}
+    \subitem \spxentry{reoncc}, \hyperpage{4}
+    \subitem \spxentry{reonode}, \hyperpage{4}
     \subitem \spxentry{spyce}, \hyperpage{3}
     \subitem \spxentry{waterwizard}, \hyperpage{4}
 
   \indexspace
   \bigletter R
   \item \spxentry{reoncc}
-    \subitem \spxentry{module}, \hyperpage{5}
+    \subitem \spxentry{module}, \hyperpage{4}
   \item \spxentry{reonode}
-    \subitem \spxentry{module}, \hyperpage{5}
+    \subitem \spxentry{module}, \hyperpage{4}
 
   \indexspace
   \bigletter S

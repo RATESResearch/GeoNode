@@ -1265,7 +1265,6 @@ INPUT /usr/share/texmf/tex/latex/tex-gyre/ts1qtm.fd
 INPUT /usr/share/texmf/tex/latex/tex-gyre/ts1qtm.fd
 INPUT /usr/share/texmf/tex/latex/tex-gyre/ts1qtm.fd
 INPUT /usr/share/texmf/tex/latex/tex-gyre/ts1qtm.fd
-INPUT /usr/share/texmf/fonts/tfm/public/tex-gyre/ts1-qtmb.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/tex-gyre/ts1-qtmr.tfm
 INPUT ./euidev.ind
 INPUT euidev.ind
@@ -1274,8 +1273,8 @@ INPUT euidev.ind
 INPUT euidev.aux
 INPUT ./euidev.out
 INPUT ./euidev.out
-INPUT /usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ec.enc
 INPUT /usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ts1.enc
+INPUT /usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ec.enc
 INPUT /usr/share/texmf/fonts/type1/public/tex-gyre/qhvb.pfb
 INPUT /usr/share/texmf/fonts/type1/public/tex-gyre/qhvbi.pfb
 INPUT /usr/share/texmf/fonts/type1/public/tex-gyre/qhvr.pfb

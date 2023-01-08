@@ -1,7 +1,10 @@
 Conclusions
 ============
 
-#. Migration from a single-stack :term:`Docker` container deployment, to a scalable :term:`Kubernetes` cluster.
-#. Reliance on an inter-pod shared, cloud-based :term:`NFS` volume service to ensure expansion and accomodation of the large volumes of geospatial data to be stored, and that produces by the integrated :term:`H&H` and visualization tools.
-#. Reliance on a managed cloud-served database service, to ensure minimal data access bottle-necks.
-#. Integration of :term:`GeoNode` v4.0 to promote future growth and seamless conntinuous deployment.
+:term:`RGVFlood.com` has been successfully taken out of beta and deployed in production mode.
+
+#. The single-stack :term:`Docker` container deployment used in the beta deployment has been coverted to a scalable :term:`Kubernetes` cluster.
+#. The production system now relies on a shared inter-pod, cloud-based :term:`NFS` volume service, ensuring expansion and accomodation of the large volumes of geospatial data being stored, and produced by the :term:`H&H` and visualization tools to be integrated.
+#. Database services are now provided by a Google's CloudSQL, a managed cloud-served database service, resulting in minimal data access bottle-necks.
+#. The core :term:`GeoNode` application has been upgraded to v4.0 maximizing the potential for future growth and seamless conntinuous deployment.
+#. A step-wise development process has been implemented, allowing both for the continuous integration of changes in third-party applications (e.g. :term:`GeoNode`), incorporation of new :term:`RGVFlood` apps, rigorous testing and continuous deployment.
