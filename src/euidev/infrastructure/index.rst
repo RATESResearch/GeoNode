@@ -1,12 +1,12 @@
 Cloud Infrastructure 
 ====================
 
-:term:`RGVFlood.com` cloud deployment relies of conversion of it's component services to be converted to be delivered via a :term:`Microservices Architecture`. Several options are available for deploying the microservices version of :term:`RGVFlood.com`, including an on-premise hardware cluster, Google Cloud Platform, Amazon Web Services and Microsoft's Azure.
+:term:`RGVFlood.com` cloud deployment relies on conversion of its component services to be converted for delivery via a :term:`Microservices Architecture`. Several options are available for deploying the microservices version of :term:`RGVFlood.com`, including an on-premise hardware cluster, Google Cloud Platform, Amazon Web Services and Microsoft's Azure.
 
 Google Cloud Platform 
 ---------------------
 
-Google Cloud Platfrom (:term:`GCP`) was selected as the initial platform for :term:`RGVFlood.com`, based on Cost of Service, and integration with existing :term:`RATES` operations.
+Google Cloud Platfrom (:term:`GCP`) was selected as the initial platform for :term:`RGVFlood.com`, based on Cost of Service and ease of integration with existing :term:`RATES` operations.
 
 Google App Engine 
 -----------------
@@ -28,7 +28,7 @@ Google Kubernetes Engine
 * waterwizard-app
 * rgvflood-app
 
-with nominal use, the cluster scaled to 9.75 :term:`vCPU` and 38.2 GB of memory. With one :term:`vCPU` being roughly equivalent to one hardware core, this is similar in capacity to a single standard bare-metal server. With the integration of user-applications (e.g. RTHS Data API and Flood Wizard), along with anticipated end-user access and demand, horizontal scaling needs are expected to quadruple at a minimum.+
+with nominal use, the cluster scaled to 9.75 :term:`vCPU` and 38.2 GB of memory. With one :term:`vCPU` being roughly equivalent to one hardware core, this is similar in capacity to a single standard bare-metal server. With the integration of user-applications (e.g. RTHS Data API and Flood Wizard), along with anticipated end-user access and demand, horizontal scaling needs are expected to quadruple at a minimum.
 
 CloudSQL
 --------
