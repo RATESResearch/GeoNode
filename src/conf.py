@@ -1,29 +1,41 @@
 # -*- coding: utf-8 -*-
-import os, sys, re, toml
-
-sys.path.insert(0, os.path.abspath('../..'))
+import os, sys, datetime, re, toml
+from dotenv import load_dotenv
 
 # -- Project information -----------------------------------------------------
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PYPROJECT_TOML = toml.load(os.path.join(PROJECT_ROOT,'pyproject.toml'))
-# SPYCE_TOML = toml.load(os.path.join(PROJECT_ROOT,basename(Repo('..').get_config().get(('remote', 'origin'), 'url')).decode("utf-8").strip('.git')+'.toml'))
-SPYCE_TOML = toml.load(os.path.join(PROJECT_ROOT,'spyce.toml'))
+load_dotenv(dotenv_path=os.path.join(PROJECT_ROOT,'.env'))
 
-name = PYPROJECT_TOML['tool']['poetry']['name']
+sys.path.insert(0, os.path.abspath(os.path.join(PROJECT_ROOT, 'src')))
+
+PYPROJECT_TOML = toml.load(os.path.join(PROJECT_ROOT,'pyproject.toml'))
 project = PYPROJECT_TOML['tool']['poetry']['description']
-author = PYPROJECT_TOML['tool']['poetry']['authors'][0]
-release = SPYCE_TOML['sphinx']['document_id']
-copyright = SPYCE_TOML['sphinx']['copyright_year'] \
+authors = ''
+author_list = PYPROJECT_TOML['tool']['poetry']['authors']
+for author in author_list:
+    if author == author_list[len(author_list)-1]:
+        authors += author
+    else:
+        authors += author + ' \\and '
+
+latex_logo = os.getenv('LATEX_LOGO', default='_static/logo.png')
+html_logo = os.getenv('HTML_LOGO', default='_static/logo.png')
+name = os.getenv('NAME', default=os.path.basename(PROJECT_ROOT))
+release = os.getenv('DOCUMENT_ID', default='v0.0.0')
+copyright_year = os.getenv('COPYRIGHT_YEAR', default=datetime.date.today().year)
+# organization = os.getenv('ORGANIZATION', default='Research, Applied Technology, Education and Service, Inc.')
+organization = os.getenv('ORGANIZATION', default='RATES, Inc.')
+copyright = str(copyright_year) \
     + ', ' \
-    + SPYCE_TOML['sphinx']['organization']
-sponsor = SPYCE_TOML['sphinx']['sponsor']
-latex_logo = SPYCE_TOML['sphinx']['latex_logo']
-html_logo = SPYCE_TOML['sphinx']['html_logo']
-techreviewer = SPYCE_TOML['sphinx']['techreviewer']
-techtitle = SPYCE_TOML['sphinx']['techtitle']
-finalreviewer = SPYCE_TOML['sphinx']['finalreviewer']
-finaltitle = SPYCE_TOML['sphinx']['finaltitle']
+    + organization
+sponsor = os.getenv('SPONSOR', default=organization)
+
+techreviewer = os.getenv('TECHREVIEWER', default=author_list[1])
+techtitle = os.getenv('TECHTITLE', default='Technical Reviewer')
+
+finalreviewer = os.getenv('FINALREVIEWER', default=author_list[0])
+finaltitle = os.getenv('FINALTITLE', default='Final Reviewer')
 
 # -- General configuration ---------------------------------------------------
 
@@ -50,7 +62,7 @@ autodoc_docstring_signature = True
 slide_include_slides = True
 
 # templates_path = ['_static']
-intersphinx_mapping = {'rgvflood': ('https://glossary.rgvflood.com/en/latest', None)}
+# intersphinx_mapping = {'rgvflood': ('https://glossary.rgvflood.com/en/latest', None)}
 source_suffix = ".rst"
 master_doc = "index"
 language = "en"
@@ -71,7 +83,7 @@ blog_default_author = "Andy"
 
 bibtex_default_style = 'plain'
 bibtex_reference_style = 'super'
-bibtex_bibfiles = ['references.bib']
+bibtex_bibfiles = ['_static/references.bib']
 
 # -- Options for plantuml output ---------------------------------------------------
 
@@ -180,12 +192,13 @@ latex_elements = {
 'babel': '\\usepackage[american]{babel}',
 'maketitle': maketitle,
 }
-authors = author
+# authors = author
 latex_documents = [
-  ('index', name+'.tex', sponsor, authors, 'manual'),
-  ('euidev/index', 'euidev.tex', sponsor, authors, 'manual'),
+  ('index', name+'.tex', sponsor,
+   authors, 
+   'manual'),
 ]
 
-latex_show_urls = 'no'
+latex_show_urls = 'footnote'
 
-# latex_appendices = ['glossary']
+latex_appendices = ['_static/glossary']
