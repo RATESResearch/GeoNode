@@ -1,7 +1,7 @@
 import sys
 sys.path.append('src')
 import rgvflood
-from spyce.fabfile import docs
+from spyce.wizard import docs
 from spyce.spell import kubespray
 from invoke import Collection
 

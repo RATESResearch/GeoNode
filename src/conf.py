@@ -19,8 +19,8 @@ for author in author_list:
     else:
         authors += author + ' \\and '
 
-latex_logo = os.getenv('LATEX_LOGO', default='_static/logo.png')
-html_logo = os.getenv('HTML_LOGO', default='_static/logo.png')
+latex_logo = os.getenv('LATEX_LOGO', default='static/logo.png')
+html_logo = os.getenv('HTML_LOGO', default='static/logo.png')
 name = os.getenv('NAME', default=os.path.basename(PROJECT_ROOT))
 release = os.getenv('DOCUMENT_ID', default='v0.0.0')
 copyright_year = os.getenv('COPYRIGHT_YEAR', default=datetime.date.today().year)
@@ -31,7 +31,7 @@ copyright = str(copyright_year) \
     + organization
 sponsor = os.getenv('SPONSOR', default=organization)
 
-techreviewer = os.getenv('TECHREVIEWER', default=author_list[1])
+techreviewer = os.getenv('TECHREVIEWER', default=author_list[0])
 techtitle = os.getenv('TECHTITLE', default='Technical Reviewer')
 
 finalreviewer = os.getenv('FINALREVIEWER', default=author_list[0])
@@ -53,7 +53,15 @@ extensions = [
 'sphinxcontrib.programoutput',
 # 'zot4rst.sphinx',
 # 'sphinx_immaterial',
+'sphinxcontrib.mermaid',
+# 'sphinx_js',
 ]
+
+# mermaid_output_format = 'png'
+# mermaid_cmd = '/usr/local/bin/mmdc'
+# mermaid_verbose = True
+
+js_language = 'typescript'
 
 autosummary_imported_members = True
 
@@ -83,7 +91,7 @@ blog_default_author = "Andy"
 
 bibtex_default_style = 'plain'
 bibtex_reference_style = 'super'
-bibtex_bibfiles = ['_static/references.bib']
+bibtex_bibfiles = ['static/references.bib']
 
 # -- Options for plantuml output ---------------------------------------------------
 
@@ -112,7 +120,7 @@ else:
 html_title = project
 html_short_title = name
 html_baseurl = "https://docs.rgvflood.com"
-html_static_path = ['_static']
+html_static_path = ['static']
 htmlhelp_basename = project
 html_sidebars = {
    '**': [ 
@@ -146,7 +154,7 @@ revealjs_script_plugins = [
         "name": "RevealNotes",
     },    
 ]
-revealjs_static_path = ['_static']
+revealjs_static_path = ['static']
 revealjs_style_theme = 'bluetunnel.css'
 
 
@@ -201,4 +209,4 @@ latex_documents = [
 
 latex_show_urls = 'footnote'
 
-latex_appendices = ['_static/glossary']
+latex_appendices = ['static/glossary']
