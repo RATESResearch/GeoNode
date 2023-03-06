@@ -1,0 +1,8 @@
+apiVersion: networking.gke.io/v1
+kind: ManagedCertificate
+metadata:
+  name: rgvflood
+  namespace: rgvflood
+spec:
+  domains:
+    - rgvflood.com

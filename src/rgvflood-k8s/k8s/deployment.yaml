@@ -1,0 +1,156 @@
+# [START kubernetes_deployment]
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rgvflood-app
+  namespace: rgvflood
+  labels:
+    app: rgvflood-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rgvflood-app
+  template:
+    metadata:
+      labels:
+        app: rgvflood-app
+    spec:
+
+      # [START volumes]
+      volumes:
+
+        - name: cloudsql-oauth-credentials
+          secret:
+            secretName: cloudsql-oauth-credentials
+
+        - name: rgvflood-secrets
+          secret:
+            secretName: rgvflood-secrets
+
+        - name: waterwizard-data-vol
+          persistentVolumeClaim:
+            claimName: rgvflood-pvc
+            readOnly: false
+
+      # [END volumes]   
+
+      containers:
+  
+      # [START rabbitmq]
+      - name: rabbitmq
+        image: rabbitmq:3.7-alpine
+        # restartPolicy: on-failure
+      # [END rabbitmq]
+
+      # [START proxy_container]
+      - image: gcr.io/cloudsql-docker/gce-proxy:1.16
+        name: cloudsql-proxy
+        command: ["/cloud_sql_proxy", "--dir=/cloudsql",
+                  "-instances=waterwizard:us-south1:waterwizard=tcp:5432",
+                  "-credential_file=/secrets/cloudsql/credentials.json"]
+        volumeMounts:
+          - name: cloudsql-oauth-credentials
+            mountPath: /secrets/cloudsql
+            readOnly: true
+          - name: rgvflood-secrets
+            mountPath: /cloudsql
+      # [END proxy_container] 
+
+      # [START geoserver container]
+      - name: geoserver
+        image: geonode/geoserver:2.20.6
+        livenessProbe:
+          initialDelaySeconds: 60
+          failureThreshold: 10
+          periodSeconds: 60
+          timeoutSeconds: 10
+          # exec:
+          #   command:
+          #   - curl 
+          #   - --fail 
+          #   - --silent 
+          #   - --write-out 
+          #   - 'Geoserver HTTP CODE : %{http_code}\n'
+          #   - --output 
+          #   - /dev/null
+          #   - http://127.0.0.1:8080/geoserver/rest/workspaces/rgvflood.html
+          httpGet:
+            path: "/geoserver/rest/workspaces/geonode.html"
+            port: 8080
+        ports:
+          - containerPort: 8080
+        envFrom:
+          - secretRef:
+              name: rgvflood-secrets
+        volumeMounts:
+          - mountPath: /data
+            name: waterwizard-data-vol
+      # [END geoserver container]
+
+      # [START celery container]
+      - name: celery
+        image: us-south1-docker.pkg.dev/waterwizard/rgvflood/rgvflood:latest
+        env:
+          - name: IS_CELERY
+            value: "True"
+        envFrom:
+          - secretRef:
+              name: rgvflood-secrets
+        volumeMounts:
+          - mountPath: /data
+            name: waterwizard-data-vol
+        command: ["/usr/src/geonode/entrypoint.sh", "celery-cmd"]
+      # [END celery container]
+
+      # [START django container]
+      - name: django
+        image: us-south1-docker.pkg.dev/waterwizard/rgvflood/rgvflood:latest
+        imagePullPolicy: Always
+        livenessProbe:
+          initialDelaySeconds: 60
+          failureThreshold: 10
+          periodSeconds: 60
+          timeoutSeconds: 10
+          # exec:
+          #   command:
+          #   - curl 
+          #   - --fail 
+          #   - --silent 
+          #   - --write-out 
+          #   - 'Django HTTP CODE : %{http_code}\n'
+          #   - --output 
+          #   - /dev/null
+          #   - http://127.0.0.1:8001/
+          httpGet:
+            path: "/"
+            port: 8001
+        ports:
+          - containerPort: 8000
+          - containerPort: 8001
+        env:
+          - name: IS_CELERY
+            value: "False"
+        envFrom:
+          - secretRef:
+              name: rgvflood-secrets
+        volumeMounts:
+          - mountPath: /data
+            name: waterwizard-data-vol
+        command: ["/usr/src/geonode/entrypoint.sh", "uwsgi", "--ini", "/usr/src/geonode/uwsgi.ini"]
+      # [END django container]
+
+      # [START nginx container]
+      - name: geonode
+        image: us-south1-docker.pkg.dev/waterwizard/geonode/nginx:latest
+        imagePullPolicy: Always        
+        ports:
+          - name: http
+            containerPort: 80
+        envFrom:
+          - secretRef:
+              name: rgvflood-secrets
+        volumeMounts:
+          - mountPath: /data
+            name: waterwizard-data-vol
+      # [END nginx container]

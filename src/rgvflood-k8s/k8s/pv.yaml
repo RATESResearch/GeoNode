@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: rgvflood-pv
+  namespace: rgvflood
+spec:
+  capacity:
+    storage: 10G
+  accessModes:
+  - ReadWriteMany
+  nfs:
+    path: /waterwizard
+    server: 10.115.85.250

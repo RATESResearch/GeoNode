@@ -1,0 +1,27 @@
+# Build rgvflood image and push to rgvflood repository
+#
+# Substitutions
+#   _GIT_PAT=$GIT_PAT
+#   _REGION=$REGION
+#   _NAMESPACE=$NAMESPACE
+#
+# gcloud builds submit  --config ${PROJECT_DIR}/src/${NAMESPACE}/cloudbuild.yaml --substitutions _GIT_PAT=${GIT_PAT},_REGION=${REGION},_NAMESPACE=${NAMESPACE}
+
+steps:
+
+# Clone geonodegcp
+- name: 'gcr.io/cloud-builders/git'
+  args: ['clone', 'https://${_GIT_PAT}@github.com/RATESResearch/GeoNodeGCP']
+
+# Build the docker image
+- name: docker
+  args:
+  - build
+  - -t
+  - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_NAMESPACE}/${_NAMESPACE}:latest
+  - ./GeoNodeGCP/src/geonodegcp
+
+# timeout: 2400s
+
+images:
+  - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_NAMESPACE}/${_NAMESPACE}:latest

@@ -1,0 +1,39 @@
+# https://cloud.google.com/kubernetes-engine/docs/concepts/ingress
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ${NAMESPACE}-ing
+  namespace: ${NAMESPACE}
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: ${NAMESPACE}-ip
+    networking.gke.io/managed-certificates: "${NAMESPACE}"
+    kubernetes.io/ingress.class: "gce"
+spec:
+  defaultBackend:
+    service:
+      name: ${NAMESPACE}-svc # Name of the Service targeted by the Ingress
+      port:
+          # name: http
+          number: 8001 # Should match the port used by the Service
+  rules:
+  - host: ${PROJECT_URL}
+    http: &backend
+      paths:
+      - path: "/geoserver"
+        pathType: Prefix
+        backend:
+          service:
+            name: ${NAMESPACE}-svc
+            port:
+              number: 8080
+      - path: "/*"
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: ${NAMESPACE}-svc
+            port:
+              number: 8001
+  # https://github.com/kubernetes-sigs/aws-load-balancer-controller/issues/908
+  # - host: jumbo.water-wizard.org
+  #   http: *backend         
+
