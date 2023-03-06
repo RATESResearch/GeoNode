@@ -1,0 +1,15 @@
+{% extends "geonode-mapstore-client/snippets/brand_navbar.html" %}
+{% load static %}
+{% block extra_style %}
+<style>
+ #gn-brand-navbar {
+   background: transparent url("/static/img/RATESLogo.png") no-repeat;
+   background-size: 214px 50px;
+   background-position: left center;
+   background-position-x: 100px;
+ }
+</style>
+{% endblock %}
+{% block logo_src %}
+{% static 'img/RGVFloodLogo.png' %}
+{% endblock %}

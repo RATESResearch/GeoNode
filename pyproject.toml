@@ -4,7 +4,7 @@ build-backend = "poetry_dynamic_versioning.backend"
 
 [tool.poetry]
 name = "rgvflood"
-version = "0.0.3"
+version = "0.1.0"
 description = "Rio Grande Valley Flood Management"
 authors = ['Andrew Ernest N.S. Ernest, Ph.D., P.E., BCEE', 'William Kirkey, Ph.D.', 'Christopher Fuller, Ph.D.', 'Skyler LeVrier, M.S.', 'Linda Navarro, M.S.', 'Ivan Santos-Chavez, M.S.']
 license = "MIT"
