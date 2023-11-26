@@ -1,0 +1,48 @@
+config:
+  raw.idmap: both 1000 1000
+  # raw.idmap: both 1001 1001
+  user.user-data: |
+    #cloud-config
+    package_upgrade: true
+    packages:
+      - build-essential
+      - keychain
+      - curl
+      - git
+      - ca-certificates
+      - curl
+      - gnupg
+      - lsb-release
+    locale: en_US.UTF-8
+    timezone: America/Chicago
+    users:
+      # - default
+      - name: anernest
+        gecos: Andrew Ernest
+        groups: users,admin
+        sudo: ALL=(ALL) NOPASSWD:ALL
+        shell: /bin/bash
+        lock_passwd: false
+        passwd: $6$rounds=4096$y5zshA.tsUsjHigp$EoOQOVavJEj6ZMH7Lq/FXYO3GoI4uKEe/xGiwgliDhmAZCRKJHrnpt663WP1KfapVc3n5tyQw0li4zULXsjDo0
+        ssh_authorized_keys: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINz1y/GdjWAB0iZhaXJY3IF/usIsM1rcXViYWkTD8afO anernest@Rabbit
+    # write_files:
+    runcmd:
+      - [touch, /tmp/andy_was_here]
+description: Serving RGVFlood
+devices:
+  homedir:
+    path: /home
+    source: /home
+    recursive: true
+    type: disk
+  optdir:
+    path: /opt
+    source: /woods/data/RGVFlood/opt
+    type: disk
+  root:
+    path: /
+    pool: default
+    type: disk
+name: {{ vmname }}
+used_by:
+- /1.0/instances/{{ vmname }}

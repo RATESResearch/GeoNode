@@ -1,0 +1,31 @@
+- name: Building RGVFlood Container 
+  hosts: ["robin"]
+  gather_facts:
+  vars:
+    vmname: rgvflood
+    fqdn: rgvflood.com
+    projectname: RGVFlood
+    workdir: "/woods/workspace/{{ projectname }}"
+    datadir: "/woods/data/{{ projectname }}"
+
+  tasks:
+
+  - name: Delete {{ vmname }}
+    shell: |
+      lxc delete --force {{ vmname }}
+      lxc profile delete {{ vmname }}
+    ignore_errors: true
+
+  - name: Create profile.yml from template
+    template:
+      src: profile.yml.j2
+      dest: "{{ playbook_dir }}/profile.yml"
+
+  - name: Create {{ vmname }} profile
+    shell: |
+      lxc profile create {{ vmname }}
+      cat {{ playbook_dir }}/profile.yml | lxc profile edit {{ vmname }}
+      lxc profile show {{ vmname }}
+
+  - name: Launch {{ vmname }}
+    shell: lxc launch ubuntu:22.04 --profile {{ vmname }} --profile macvlan {{ vmname }}

@@ -1,0 +1,25 @@
+# https://ubuntu.com/tutorials/how-to-run-docker-inside-lxd-containers#2-create-lxd-container
+- name: Create the sotrage for docker 
+  hosts: ["robin"]
+  gather_facts:
+
+  tasks:
+
+  - name: Create btfrs storage
+    shell: |
+      lxc storage create docker btrfs
+      lxc storage volume create docker rgvflood
+      lxc config device add rgvflood docker disk pool=docker source=rgvflood path=/var/lib/docker
+      lxc config set rgvflood security.nesting=true security.syscalls.intercept.mknod=true security.syscalls.intercept.setxattr=true
+      lxc restart rgvflood
+    ignore_errors:
+
+  - name: Install Docker
+    shell: |      
+      lxc exec rgvflood -- curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+      lxc exec rgvflood -- echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
+      lxc exec rgvflood -- apt-get update
+      lxc exec rgvflood -- apt-get install docker-ce docker-ce-cli containerd.io
+    ignore_errors:
+
+
