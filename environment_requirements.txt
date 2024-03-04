@@ -1,0 +1,13 @@
+django
+psycopg2-binary
+django-registration
+django-cors-headers
+toml
+ansible-core
+ansible-kernel
+ansible-lint
+jupyter-book
+jupyter
+jupyter_client
+# ../WaterWizard
+# ../Boobrie

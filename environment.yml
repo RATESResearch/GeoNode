@@ -1,0 +1,12 @@
+name: geonode
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python
+  - gdal
+  - ipykernel
+  - nb_conda_kernels
+  - pip
+  - pip:
+    - -r environment_requirements.txt

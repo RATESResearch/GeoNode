@@ -1,0 +1,32 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: index
+# chapters:
+#   - file: PROJECTS.md
+  # - file: preface/index
+  # - file: apps/index
+  #   sections:
+  #   - file: apps/anaconda/index.rst
+  #   - file: apps/jupyter-book/index.rst
+  #   - file: apps/lxd/index.rst
+  #   - file: apps/nginx/index.md
+  # - file: containers/index
+  #   sections:
+  #   - file: containers/bumbleproxy/index.md
+  #   - file: containers/bumblebook/index.md
+  #   - file: containers/bumblehub/index.md
+  # - file: bms/index
+  #   sections:
+  #   - file: bms/bumblebrain/index.rst
+  # - file: initiatives/index
+  #   sections:
+  #   - file: initiatives/WINNY/index
+  #   - file: initiatives/WIST/index  
+  # - file: projects/index
+  #   sections:
+  #   - file: projects/DataWizard/index
+  #   - file: projects/FloodWizard/index
+  #   - file: projects/Basys3/index.rst
+  #   - file: projects/PyTorch/index.ipynb

@@ -1,6 +1,6 @@
-title: BumbleBrain
+title: GeoNode
 author: Andrew N.S. Ernest, Ph.D., P.E., BCEE, D.WRE
-logo: AndrewErnest.png
+logo: RGVFlood-logo.png
 only_build_toc_files: true
 execute:
   execute_notebooks: force

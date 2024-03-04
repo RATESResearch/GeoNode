@@ -1,0 +1,37 @@
+- name: Creating Container 
+  hosts: ["{{ host | default('stumble') }}"]
+  gather_facts:
+  vars:
+    vm_name: "{{ vm | default('geonode') }}"
+
+  roles:
+
+    - role: lxc/create
+
+  tasks:
+
+    - name: Attach the dockerlib volume to the geonode container
+      shell: lxc config device add geonode docker disk pool=docker source=dockerlib path=/var/lib/docker
+
+    - name: Add additional configuration so that Docker works well inside the container. Restart the container.
+      shell: |
+        lxc config set geonode security.nesting=true security.syscalls.intercept.mknod=true security.syscalls.intercept.setxattr=true
+        lxc restart geonode
+
+    - name: Install Docker
+      shell: |
+        lxc exec geonode -- apt-get update
+        lxc exec geonode -- apt-get -y install ca-certificates curl gnupg lsb-release
+        lxc exec geonode -- rm -rf /usr/share/keyrings/docker-archive-keyring.gpg
+        lxc exec geonode -- bash -c "curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg"
+        lxc exec geonode -- bash -c 'echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null'
+        lxc exec geonode -- apt-get update
+        lxc exec geonode -- apt-get install -y docker-ce docker-ce-cli containerd.io
+        lxc exec geonode -- usermod -aG docker anernest
+
+    - name: Add Stumble fileshare
+      shell: lxc config device add geonode stumbledir disk source=/Stumble path=/Stumble recursive=true
+
+    - name: Run Docker Compose
+      shell: |
+        lxc exec geonode -- docker compose -f /Stumble/BumbleBrain/GeoNode/docker-compose.yml
